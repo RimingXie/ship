@@ -1,12 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import Button, { ButtonSize, ButtonType } from './components/Button/button'
+const App: React.FC = () => {
   return (
     <div className="App">
+      <Button>Hello</Button>
+      <Button btnType={ButtonType.Primary} size={ButtonSize.Large}>Hello</Button>
+      <Button btnType={ButtonType.Link} href="https://www.baidu.com">baidu</Button>
+      <Button btnType={ButtonType.Danger}>Hello</Button>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
