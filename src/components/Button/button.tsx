@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 
 export enum ButtonSize {
@@ -20,16 +20,13 @@ interface BaseButtonProps {
   btnType?: ButtonType;
   children: React.ReactNode,
   href?: string,
-  onClick?: React.MouseEventHandler<HTMLElement>
 }
 
-const Button: React.FC<BaseButtonProps> = (props) => {
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
-    const { onClick } = props;
-    if (onClick) {
-      (onClick as React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>)(e);
-    }
-  };
+type NativeButtonProps = BaseButtonProps & React.ButtonHTMLAttributes<HTMLElement>
+type AnchorButtonProps = BaseButtonProps & React.AnchorHTMLAttributes<HTMLElement>
+export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
+
+const Button: React.FC<ButtonProps> = (props) => {
   const {
     btnType,
     disabled,
@@ -37,19 +34,20 @@ const Button: React.FC<BaseButtonProps> = (props) => {
     children,
     href,
     className,
+    ...restProps
   } = props;
 
-  const classes = classNames('btn', {
+  const classes = classNames('btn', className, {
     [`btn-${btnType}`]: btnType,
     [`btn-${size}`]: size,
-    'disabled': (btnType === ButtonType.Link) && disabled,
-    [`${className}`]: className
+    'disabled': (btnType === ButtonType.Link) && disabled
   })
   if (btnType === ButtonType.Link && href) {
     return (
       <a
         className={classes}
         href={href}
+        {...restProps}
       >
         {children}
       </a>
@@ -59,7 +57,7 @@ const Button: React.FC<BaseButtonProps> = (props) => {
       <button
         className={classes}
         disabled={disabled}
-        onClick={handleClick}
+        {...restProps}
       >
         {children}
       </button>

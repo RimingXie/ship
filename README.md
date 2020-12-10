@@ -48,3 +48,8 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 # 项目主要技术栈
   ## sass 预编译器
     reboot.scss 基于 normalize.css 修改
+
+# 测试
+  ## jest 测试框架
+  ## testing-library/react 测试框架
+  ## jest-dom 测试工具
