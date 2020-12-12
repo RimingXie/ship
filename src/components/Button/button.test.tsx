@@ -9,8 +9,8 @@ const defaultProps = {
 
 // 测试输入数据
 const testProps: ButtonProps = {
-  btnType: ButtonType.Primary,
-  size: ButtonSize.Large,
+  btnType: 'primary',
+  size: 'lg',
   className: 'klass'
 }
 
@@ -43,7 +43,7 @@ describe('test Button component', () => {
 
   // 当btnType等于link并且提供herf时，应该呈现一个链接
   it('should render a link when btnType equals link and herf is provided', () => {
-    const wrapper = render(<Button btnType={ButtonType.Link} href="https://www.baidu.com">Link</Button>)
+    const wrapper = render(<Button btnType="link" href="https://www.baidu.com">Link</Button>)
     const element = wrapper.getByText('Link')
     expect(element).toBeInTheDocument()
     expect(element.tagName).toEqual('A')

@@ -1,17 +1,20 @@
-import React from 'react';
-import Button, { ButtonSize, ButtonType } from './components/Button/button'
+import React, { useState } from 'react';
+import Button from './components/Button/button'
 import Alert, { AlertType } from './components/Alert/alert'
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
 import './app.css'
 import SubMenu from './components/Menu/subMenu';
 
+import Transition from './components/Transition/transition'
+
 import Icon from './components/Icon/icon'
 const App: React.FC = () => {
+  const [show, setShow] = useState(false)
   return (
     <div className="App">
       <Icon icon="coffee" theme="danger" size="10x" />
-      <Menu defaultIndex={'0'} onSelect={(index) => { console.log(index) }} mode="vertical" defaultOpenSubMenus={['2']}>
+      <Menu defaultIndex={'0'} onSelect={(index) => { console.log(index) }} defaultOpenSubMenus={['2']}>
         <MenuItem>cool link1</MenuItem>
         <MenuItem>cool link2</MenuItem>
         <SubMenu title="dropdown">
@@ -22,16 +25,36 @@ const App: React.FC = () => {
         <MenuItem>cool link3</MenuItem>
       </Menu>
       <Button className="rm-button" onClick={(e) => { e.preventDefault(); alert(123) }}>Hello</Button>
-      <Button btnType={ButtonType.Primary} size={ButtonSize.Large}>Hello</Button>
-      <Button btnType={ButtonType.Link} href="https://www.baidu.com">baidu</Button>
-      <Button btnType={ButtonType.Danger}>Hello</Button>
+      <Button btnType="primary" size="lg">Hello</Button>
+      <Button btnType="link" href="https://www.baidu.com">baidu</Button>
+      <Button btnType="danger">Hello</Button>
       <div className="alert-demo">
         <Alert closeText="close" onClose={(e) => { console.log(e) }} closable message="Success Text" type={AlertType.Success} description="Success Description Success Description Success Description" />
         <Alert message="Info Text" type={AlertType.Info} />
         <Alert message="Warning Text" type={AlertType.Warning} />
         <Alert message="Error Text" type={AlertType.Error} />
       </div>
-
+      <Button size="lg" onClick={() => { setShow(!show) }}> toggle</Button>
+      <Transition
+        in={show}
+        timeout={300}
+        animation="zoom-in-left"
+      >
+        <div>
+          <p>asgggggggggggggggadsdw</p>
+          <p>asgggggggggggggggadsdw</p>
+          <p>asgggggggggggggggadsdw</p>
+          <p>asgggggggggggggggadsdw</p>
+        </div>
+      </Transition>
+      <Transition
+        in={show}
+        timeout={300}
+        animation="zoom-in-left"
+        wrapper
+      >
+        <Button>adgsjgf</Button>
+      </Transition>
     </div>
   );
 }

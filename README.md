@@ -63,4 +63,9 @@ To learn React, check out the [React documentation](https://reactjs.org/).
     npm i --save @fortawesome/free-solid-svg-icons
     npm i --save @fortawesome/react-fontawesome
 
-  
+# 动画
+  ## 使用 React Transition Group 动画库
+  https://reactcommunity.org/react-transition-group/
+
+  npm install react-transition-group --save
+  npm install @types/react-transition-group --save
