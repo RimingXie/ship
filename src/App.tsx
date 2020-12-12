@@ -5,9 +5,12 @@ import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
 import './app.css'
 import SubMenu from './components/Menu/subMenu';
+
+import Icon from './components/Icon/icon'
 const App: React.FC = () => {
   return (
     <div className="App">
+      <Icon icon="coffee" theme="danger" size="10x" />
       <Menu defaultIndex={'0'} onSelect={(index) => { console.log(index) }} mode="vertical" defaultOpenSubMenus={['2']}>
         <MenuItem>cool link1</MenuItem>
         <MenuItem>cool link2</MenuItem>

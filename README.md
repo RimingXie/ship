@@ -53,3 +53,14 @@ To learn React, check out the [React documentation](https://reactjs.org/).
   ## jest 测试框架
   ## testing-library/react 测试框架
   ## jest-dom 测试工具
+
+# 图标
+  ## 使用 Font Awesome 图标库
+  https://github.com/FortAwesome/react-fontawesome
+  https://fontawesome.com/icons?d=gallery&s=solid&m=free
+
+    npm i --save @fortawesome/fontawesome-svg-core
+    npm i --save @fortawesome/free-solid-svg-icons
+    npm i --save @fortawesome/react-fontawesome
+
+  
