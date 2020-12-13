@@ -50,33 +50,37 @@ To learn React, check out the [React documentation](https://reactjs.org/).
     reboot.scss 基于 normalize.css 修改
 
 # 测试
-  jest 测试框架
-  testing-library/react 测试框架
-  jest-dom 测试工具
+  `jest 测试框架`
+  `testing-library/react 测试框架`
+  `jest-dom 测试工具`
 
 # 图标
   ## 使用 Font Awesome 图标库
-  https://github.com/FortAwesome/react-fontawesome
-  https://fontawesome.com/icons?d=gallery&s=solid&m=free
-
+  `https://github.com/FortAwesome/react-fontawesome`
+  `https://fontawesome.com/icons?d=gallery&s=solid&m=free`
+  ```bash
     npm i --save @fortawesome/fontawesome-svg-core
     npm i --save @fortawesome/free-solid-svg-icons
     npm i --save @fortawesome/react-fontawesome
-
+  ```
 # 动画
   ## 使用 React Transition Group 动画库
-  https://reactcommunity.org/react-transition-group/
-
+  `https://reactcommunity.org/react-transition-group/`
+  ```bash
     npm install react-transition-group --save
     npm install @types/react-transition-group --save
-
+  ```
 # 文档
   ## 使用 storybook.js 自动生成文档
-  https://storybook.js.org/
-
+  `https://storybook.js.org/`
+  ```bash
     npx -p @storybook/cli sb init
-  
-  运行文档
+  ```  
+  `运行文档`
+  ```bash
     npm run storybook
-  打包文档
+  ```
+  `打包文档`
+  ```bash
     npm run build-storybook
+  ```
