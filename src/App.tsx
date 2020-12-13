@@ -29,10 +29,10 @@ const App: React.FC = () => {
       <Button btnType="link" href="https://www.baidu.com">baidu</Button>
       <Button btnType="danger">Hello</Button>
       <div className="alert-demo">
-        <Alert closeText="close" onClose={(e) => { console.log(e) }} closable message="Success Text" type={AlertType.Success} description="Success Description Success Description Success Description" />
-        <Alert message="Info Text" type={AlertType.Info} />
-        <Alert message="Warning Text" type={AlertType.Warning} />
-        <Alert message="Error Text" type={AlertType.Error} />
+        <Alert closeText="close" onClose={(e) => { console.log(e) }} closable message="Success Text" type="success" description="Success Description Success Description Success Description" />
+        <Alert message="Info Text" type="info" />
+        <Alert message="Warning Text" type="warning" />
+        <Alert message="Error Text" type="error" />
       </div>
       <Button size="lg" onClick={() => { setShow(!show) }}> toggle</Button>
       <Transition

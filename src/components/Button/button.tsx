@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-export type ButtonSize = 'lg' | 'sm'
+export type ButtonSize = 'lg' | 'df' | 'sm'
 
 // export enum ButtonSize {
 //   Large = 'lg',
@@ -17,11 +17,29 @@ export type ButtonType = 'primary' | 'default' | 'danger' | 'link'
 // }
 
 interface BaseButtonProps {
+  /**
+   * 自定义classname
+   */
   className?: string;
+  /**
+   * 是否为不可用状态
+   */
   disabled?: boolean;
+  /**
+   * 设置button的尺寸大小
+   */
   size?: ButtonSize,
+  /**
+   * 设置button的类型
+   */
   btnType?: ButtonType;
+  /**
+   * button 的内容
+   */
   children: React.ReactNode,
+  /**
+   * 设置超连接，btnType为link时可用
+   */
   href?: string,
 }
 
@@ -29,20 +47,16 @@ type NativeButtonProps = BaseButtonProps & React.ButtonHTMLAttributes<HTMLElemen
 type AnchorButtonProps = BaseButtonProps & React.AnchorHTMLAttributes<HTMLElement>
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
-const Button: React.FC<ButtonProps> = (props) => {
-  const {
-    btnType,
-    disabled,
-    size,
-    children,
-    href,
-    className,
-    ...restProps
-  } = props;
-
+/**
+ * 按钮用于开始一个即时操作<br />
+ * ``` 
+ *  import {Buttom} from 'ship-ui'
+ * ```
+ */
+export const Button: React.FC<ButtonProps> = ({ btnType, disabled, size, children, href, className, ...restProps }) => {
   const classes = classNames('btn', className, {
     [`btn-${btnType}`]: btnType,
-    [`btn-${size}`]: size,
+    [`btn-${size}`]: size && size !== 'df',
     'disabled': (btnType === 'link') && disabled
   })
   if (btnType === 'link' && href) {
@@ -70,7 +84,8 @@ const Button: React.FC<ButtonProps> = (props) => {
 
 Button.defaultProps = {
   disabled: false,
-  btnType: 'default'
+  btnType: 'default',
+  size: 'df'
 }
 
 export default Button;
