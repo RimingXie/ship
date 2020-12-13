@@ -71,8 +71,8 @@ To learn React, check out the [React documentation](https://reactjs.org/).
     npm install react-transition-group --save
     npm install @types/react-transition-group --save
   ```
-  
-# 动画
+
+# 文档
   ## 使用 storybook.js 自动生成文档
   <p>https://storybook.js.org/</p>
   ```bash
