@@ -47,17 +47,18 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 # 项目主要技术栈
   ## sass 预编译器
-    reboot.scss 基于 normalize.css 修改
+  <p>reboot.scss 基于 normalize.css 修改</p>
 
 # 测试
-  `jest 测试框架`
-  `testing-library/react 测试框架`
-  `jest-dom 测试工具`
+ <p>jest 测试框架 </p>
+ <p>testing-library/react 测试框架</p>
+ <p>jest-dom 测试工具</p>
 
 # 图标
   ## 使用 Font Awesome 图标库
-  `https://github.com/FortAwesome/react-fontawesome`
-  `https://fontawesome.com/icons?d=gallery&s=solid&m=free`
+  <p>https://github.com/FortAwesome/react-fontawesome</p>
+  <p>https://fontawesome.com/icons?d=gallery&s=solid&m=free</p>
+
   ```bash
     npm i --save @fortawesome/fontawesome-svg-core
     npm i --save @fortawesome/free-solid-svg-icons
@@ -65,22 +66,22 @@ To learn React, check out the [React documentation](https://reactjs.org/).
   ```
 # 动画
   ## 使用 React Transition Group 动画库
-  `https://reactcommunity.org/react-transition-group/`
+  <p>https://reactcommunity.org/react-transition-group/</p>
   ```bash
     npm install react-transition-group --save
     npm install @types/react-transition-group --save
   ```
 # 文档
   ## 使用 storybook.js 自动生成文档
-  `https://storybook.js.org/`
+  <p>https://storybook.js.org/</p>
   ```bash
     npx -p @storybook/cli sb init
   ```  
-  `运行文档`
+  <p>运行文档</p>
   ```bash
     npm run storybook
   ```
-  `打包文档`
+  <p>打包文档</p>
   ```bash
     npm run build-storybook
   ```
