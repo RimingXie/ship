@@ -6,21 +6,13 @@ import Icon from '../Icon/icon';
 import Transition from '../Transition/transition'
 
 export interface SubMenuProps {
-  /*
-  * 被选中item的index
-  */
+  /* 被选中item的index */
   index?: string;
-  /**
-   * 设置子菜单title
-   */
+  /** 设置子菜单title */
   title: string;
-  /**
-   * 设置自定义classname
-   */
+  /** 设置自定义classname */
   className?: string;
-  /**
-   * 设置自定义样式
-   */
+  /** 设置自定义样式 */
   style?: React.CSSProperties
 }
 

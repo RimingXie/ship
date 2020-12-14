@@ -2,21 +2,13 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { MenuContext } from './menu'
 export interface MenuItemProps {
-  /*
-  * 被选中item的index
-  */
+  /* 被选中item的index */
   index?: string;
-  /**
-   * 设置item是否为可用
-   */
+  /** 设置item是否为可用 */
   disabled?: boolean;
-  /**
-   * 设置自定义classname
-   */
+  /** 设置自定义classname */
   className?: string;
-  /**
-   * 设置自定义样式
-   */
+  /** 设置自定义样式 */
   style?: React.CSSProperties
 }
 

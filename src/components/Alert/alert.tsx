@@ -12,33 +12,19 @@ import Icon from '../Icon/icon'
 export type AlertType = 'success' | 'info' | 'warning' | 'error'
 
 interface BaseAlertProps {
-  /**
-   * 设置警告提示内容	
-   */
+  /** 设置警告提示内容 */
   message: string;
-  /**
-   * 设置警告提示的辅助性文字介绍	
-   */
+  /** 设置警告提示的辅助性文字介绍 */
   description?: string;
-  /**
-   * 设置指定警告提示的样式，有四种选择	
-   */
+  /** 设置指定警告提示的样式，有四种选择 */
   type?: AlertType;
-  /**
-   * 设置自定义classname	
-   */
+  /** 设置自定义classname */
   className?: string;
-  /**
-   * 设置默认不显示关闭按钮
-   */
+  /** 设置默认不显示关闭按钮 */
   closable?: boolean;
-  /**
-   * 设置自定义关闭按钮
-   */
+  /** 设置自定义关闭按钮 */
   closeText?: string;
-  /**
-   * 设置关闭时触发的回调函数
-   */
+  /** 设置关闭时触发的回调函数 */
   onClose?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
@@ -57,7 +43,6 @@ export type AlertProps = BaseAlertProps;
  */
 export const Alert: React.FC<BaseAlertProps> = (props) => {
   const { message, description, type, className, closable, closeText } = props;
-  console.log(closable)
   const [closed, setClosed] = useState(false)
 
   const handleClose = (e: React.MouseEvent<HTMLButtonElement>) => {

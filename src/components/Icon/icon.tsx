@@ -8,13 +8,9 @@ library.add(fas)
 export type ThemeProps = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark'
 
 export interface IconProps extends FontAwesomeIconProps {
-  /**
-   * 设置icon主题
-   */
+  /** 设置icon主题 */
   theme?: ThemeProps,
-  /**
-   * 设置Icon
-   */
+  /** 设置Icon */
   icon: IconName
 }
 /**

@@ -17,29 +17,17 @@ export type ButtonType = 'primary' | 'default' | 'danger' | 'link'
 // }
 
 interface BaseButtonProps {
-  /**
-   * 自定义classname
-   */
+  /** 自定义classname */
   className?: string;
-  /**
-   * 是否为不可用状态
-   */
+  /** 是否为不可用状态 */
   disabled?: boolean;
-  /**
-   * 设置button的尺寸大小
-   */
+  /** 设置button的尺寸大小 */
   size?: ButtonSize,
-  /**
-   * 设置button的类型
-   */
+  /** 设置button的类型 */
   btnType?: ButtonType;
-  /**
-   * button 的内容
-   */
+  /** button 的内容 */
   children: React.ReactNode,
-  /**
-   * 设置超连接，btnType为link时可用
-   */
+  /** 设置超连接，btnType为link时可用 */
   href?: string,
 }
 

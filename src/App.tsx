@@ -8,11 +8,22 @@ import SubMenu from './components/Menu/subMenu';
 
 import Transition from './components/Transition/transition'
 
+import Row from './components/Grid/row'
+import Col from './components/Grid/col'
+
 import Icon from './components/Icon/icon'
 const App: React.FC = () => {
   const [show, setShow] = useState(false)
   return (
     <div className="App">
+      <div className="row-demo">
+      <Row>
+      <Col span={8} order={2}>col-2</Col>
+      <Col span={8} order={1}>
+        col-1
+      </Col>
+    </Row>
+      </div>
       <Icon icon="coffee" theme="danger" size="10x" />
       <Menu defaultIndex={'0'} onSelect={(index) => { console.log(index) }} defaultOpenSubMenus={['2']}>
         <MenuItem>cool link1</MenuItem>
