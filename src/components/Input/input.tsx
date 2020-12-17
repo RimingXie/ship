@@ -15,7 +15,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size
   prepend?: string | ReactElement;
   /**添加后缀 用于配置一些固定组合 */
   append?: string | ReactElement;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  // onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 /**

@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "outDir": "build", // 输出路径
+    "module": "esnext", // 输出类型 es module 类型
+    "target": "ES5", // 输出标准 目标版本
+    "declaration": true, // 是否生成 .d.ts类型文件
+    "jsx": "react",
+    "moduleResolution": "node", // 文件路径寻址方式
+    "allowSyntheticDefaultImports": true, // 支持 es6的import 
+    "skipLibCheck": true,
+  },
+  "include": [ // 要包含的文件
+    "src"
+  ],
+  "exclude": [ // 编译时需要忽略的文件
+    "src/**/*.test.tsx",
+    "src/**/*.stories.tsx",
+    "src/**/*.stories.mdx",
+  ]
+}
