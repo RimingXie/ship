@@ -47,6 +47,9 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 # 项目主要技术栈
   ## sass 预编译器
+  ```bash
+    npm install sass-loader node-sass --save-dev
+  ```
   <p>reboot.scss 基于 normalize.css 修改</p>
 
 # 测试
