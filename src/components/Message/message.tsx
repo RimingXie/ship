@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import ReactDOM from 'react-dom';
 import Icon from '../Icon/icon'
+import { SwitchTransition, CSSTransition} from 'react-transition-group'
 
 let key = 1;
 let NoticeList: any[] = []
@@ -66,7 +67,8 @@ export interface MessageType {
 
 /**
  * 全局展示操作反馈信息。
- * ```
+ * 
+ * ```js
  * import { Message } from 'ship-ui'
  * ```
  */

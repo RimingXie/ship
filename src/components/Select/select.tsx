@@ -7,7 +7,8 @@ export interface SelectProps extends React.HTMLAttributes<HTMLElement>{
 
 /**
  * 下拉选择器。
- * ```
+ * 
+ * ```js
  * import { Select } from 'ship-ui'
  * ```
  */

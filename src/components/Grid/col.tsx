@@ -19,6 +19,13 @@ export interface ColProps extends React.HTMLAttributes<HTMLDivElement> {
   span?: number;
 }
 
+/**
+ * 
+ * ```js
+ * 
+ * import { Col } from 'ship-ui'
+ * ```
+ */
 function parseFlex(flex: FlexType): string {
   if (typeof flex === 'number') {
     return `${flex} ${flex} auto`;

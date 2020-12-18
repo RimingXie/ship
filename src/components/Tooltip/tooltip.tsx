@@ -7,7 +7,8 @@ export interface TooltipProps extends React.HTMLAttributes<HTMLElement>{
 
 /**
  * 简单的文字提示气泡框。
- * ```
+ * 
+ * ```js
  * import { Tooltip } from 'ship-ui'
  * ```
  */

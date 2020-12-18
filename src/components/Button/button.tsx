@@ -37,8 +37,9 @@ export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
 /**
  * 按钮用于开始一个即时操作<br />
- * ``` 
- *  import {Buttom} from 'ship-ui'
+ * 
+ * ```js
+ *  import { Button } from 'ship-ui'
  * ```
  */
 export const Button: React.FC<ButtonProps> = ({ btnType, disabled, size, children, href, className, ...restProps }) => {

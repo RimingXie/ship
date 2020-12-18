@@ -7,7 +7,8 @@ export interface RadioProps extends React.HTMLAttributes<HTMLElement>{
 
 /**
  * 单选框。
- * ```
+ * 
+ * ```js
  * import { Radio } from 'ship-ui'
  * ```
  */

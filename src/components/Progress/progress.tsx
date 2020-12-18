@@ -8,7 +8,8 @@ export interface ProgressProps extends React.HTMLAttributes<HTMLElement>{
 /**
  * # 进度条
  * 展示操作的当前进度。
- * ```
+ * 
+ * ```js
  * import { Progress } from 'ship-ui'
  * ```
  */

@@ -7,7 +7,8 @@ export interface RateProps extends React.HTMLAttributes<HTMLElement>{
 
 /**
  * 评分组件。
- * ```
+ * 
+ * ```js
  * import { Rate } from 'ship-ui'
  * ```
  */

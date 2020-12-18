@@ -7,7 +7,8 @@ export interface DrawerProps extends React.HTMLAttributes<HTMLElement>{
 
 /**
  * 屏幕边缘滑出的浮层面板。
- * ```
+ * 
+ * ```js
  * import { Drawer } from 'ship-ui'
  * ```
  */

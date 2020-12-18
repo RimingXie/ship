@@ -7,7 +7,8 @@ export interface SwitchProps extends React.HTMLAttributes<HTMLElement>{
 
 /**
  * 开关选择器。
- * ```
+ * 
+ * ```js
  * import { Switch } from 'ship-ui'
  * ```
  */

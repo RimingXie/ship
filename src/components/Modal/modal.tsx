@@ -7,7 +7,8 @@ export interface ModalProps extends React.HTMLAttributes<HTMLElement>{
 
 /**
  * 模态对话框。
- * ```
+ * 
+ * ```js
  * import { Modal } from 'ship-ui'
  * ```
  */

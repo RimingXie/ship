@@ -22,6 +22,10 @@ export interface CheckBoxProps {
 
 /**
  * 多选框。
+ * 
+ * ```js
+ * import { Checkbox } from 'ship-ui'
+ * ```
  */
 export const Checkbox: React.FC<CheckBoxProps> = (props) => {
   const { children, className, style, checked, autoFocus, defaultChecked, disabled, indeterminate, onChange } = props

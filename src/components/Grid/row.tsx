@@ -25,6 +25,13 @@ interface IGridContext {
 
 export const GridContext = createContext<IGridContext>({})
 
+/**
+ * 
+ * ```js
+ * 
+ * import { Row } from 'ship-ui'
+ * ```
+ */
 export const Row: React.FC<RowProps> = (props) => {
   const { align, gutter, justify, wrap, className, children, style, ...others } = props
   const classes = classNames('row', className, {

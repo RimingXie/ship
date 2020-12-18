@@ -8,7 +8,8 @@ export interface ResultProps extends React.HTMLAttributes<HTMLElement>{
 /**
  * # Result结果
  * 用于反馈一系列操作任务的处理结果。
- * ```
+ * 
+ * ```js
  * import { Result } from 'ship-ui'
  * ```
  */

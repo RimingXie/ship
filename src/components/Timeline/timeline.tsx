@@ -7,7 +7,8 @@ export interface TimelineProps extends React.HTMLAttributes<HTMLElement>{
 
 /**
  * 垂直展示的时间流信息。
- * ```
+ * 
+ * ```js
  * import { Timeline } from 'ship-ui'
  * ```
  */

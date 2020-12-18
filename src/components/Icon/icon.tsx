@@ -17,7 +17,8 @@ export interface IconProps extends FontAwesomeIconProps {
  * 语义化的矢量图形。使用图标组件 <br />
  * 采用 fontawesome 图标库 <br />
  * 点击 https://fontawesome.com/icons?d=gallery&s=solid&m=free 查看更多<br />
- * ``` 
+ * 
+ * ```js
  *  import {Icon} from 'ship-ui'
  * ```
  */

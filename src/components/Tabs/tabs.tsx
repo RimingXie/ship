@@ -7,7 +7,8 @@ export interface TabsProps extends React.HTMLAttributes<HTMLElement>{
 
 /**
  * 选项卡切换组件。
- * ```
+ * 
+ * ```js
  * import { Tabs } from 'ship-ui'
  * ```
  */

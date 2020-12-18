@@ -7,7 +7,8 @@ export interface TagProps extends React.HTMLAttributes<HTMLElement>{
 
 /**
  * 进行标记和分类的小标签。
- * ```
+ * 
+ * ```js
  * import { Tag } from 'ship-ui'
  * ```
  */

@@ -32,7 +32,8 @@ export const MenuContext = createContext<IMenuContext>({ index: '0' });
 
 /**
  * 为页面和功能提供导航的菜单列表 <br />
- * ```
+ * 
+ * ```js
  *  import {Meun, MenuItem,SubMenu} from 'ship-ui'
  * ```
  */
