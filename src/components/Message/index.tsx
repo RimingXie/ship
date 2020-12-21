@@ -1,120 +1,112 @@
-import React from 'react'
-import { SwitchTransition, CSSTransition } from 'react-transition-group'
-import classNames from 'classnames';
-import ReactDOM from 'react-dom';
+import React, { CSSProperties, ReactNode } from 'react'
+import Notification from 'rc-notification';
 import Icon from '../Icon/icon'
+import classNames from 'classnames'
 
-let key = 1;
+let notification: any = null;
+let defaultDuration = 3;
+let prefixCls: string = 'ship-message';
 
-type ConfigContent = React.ReactNode | string;
+export type MessageType = 'info' | 'success' | 'warning' | 'error';
 type ConfigDuration = number | (() => void);
-export type ConfigOnClose = () => void;
-type NoticeType = 'info' | 'success' | 'error' | 'warning' | 'loading';
 
-/** `config` 对象属性 */
-export interface ConfigOptions {
-  /** 提示内容 */
-  content: React.ReactNode;
-  /** 消息距离顶部的位置 */
-  top?: number;
-  /** 默认自动关闭延时，单位秒 */
-  duration?: number;
-  /** 配置渲染节点的输出位置 */
-  getContainer?: () => void;
-  transitionName?: string;
-  /** 最大显示数, 超过限制时，最早的消息会被自动关闭 */
-  maxCount?: number;
-  /** 是否开启 RTL 模式 */
-  rtl?: boolean;
-  /** 自定义内联样式 */
-  style?: React.CSSProperties;
+export interface ArgsProps {
   /** 自定义 CSS class */
   className?: string;
-  /** 自定义图标 */
-  icon?: React.ReactNode;
   /** 提示类型 */
-  type?: NoticeType;
-  /** 关闭时触发的回调函数 */
+  type?: MessageType;
+  /** 提示内容 */
+  content: ReactNode;
+  /** 自动关闭的延时，单位秒。设为 0 时不自动关闭 */
+  duration?: number | null;
+  /** 自定义图标 */
+  icon?: ReactNode;
+  /** 当前提示的唯一标志 */
+  key?: string | number;
+  /** 自定义内联样式 */
+  style?: CSSProperties;
+  /** 关闭时触发的回调函数	 */
   onClose?: () => void;
+  maxCount?: number;
 }
 
-export interface MessageApi {
-  info(content: ConfigContent, duration?: ConfigDuration, onClose?: ConfigOnClose): void;
-  success(content: ConfigContent, duration?: ConfigDuration, onClose?: ConfigOnClose): void;
-  error(content: ConfigContent, duration?: ConfigDuration, onClose?: ConfigOnClose): void;
-  warning(content: ConfigContent, duration?: ConfigDuration, onClose?: ConfigOnClose): void;
-  loading(content: ConfigContent, duration?: ConfigDuration, onClose?: ConfigOnClose): void;
-  config(options: ConfigOptions): void;
+const setNotificationInstance = (args: ArgsProps) => {
+  if (!notification) {
+    Notification.newInstance({
+      prefixCls,
+      style: {},
+      transitionName:'move-up',
+      maxCount: args.maxCount || 5,
+      getContainer: () => document.body,
+    }, (notice) => notification = notice)
+  }
 }
 
-export interface ThenableArgument {
-  (val: any): void;
-}
-
-export interface MessageType {
-  (): void;
-  then: (fill: ThenableArgument, reject: ThenableArgument) => Promise<void>;
-  promise: Promise<void>;
-}
-
-function isArgsProps(content: ConfigContent): content is ConfigOptions {
+const getRCNoticeProps = (args: ArgsProps) => {
+  const classes = classNames(`${prefixCls}-custom-content`, {
+    [`${prefixCls}-${args.type}`]: args.type
+  });
   return (
-    Object.prototype.toString.call(content) === '[object Object]' &&
-    !!(content as ConfigOptions).content
-  );
-}
-
-function notice(args: ConfigOptions): void {
-  const element = <div className="main">
-    <SwitchTransition mode={'in-out'}>
-      <CSSTransition
-        key={key}
-        addEndListener={(node, done) => {
-          node.addEventListener("transitionend", done, false);
-        }}
-        classNames="fade"
-      >
-        <div className="button-container">
-          <button className="btn btn-primary">
-            Hello, world
-            </button>
-        </div>
-      </CSSTransition>
-    </SwitchTransition>
-  </div>
-  let div = document.createElement('div')
-  ReactDOM.render(element, div)
-  document.body.appendChild(div)
-
-  console.log(args)
+    <div className={classes}>
+      <span className="anticon anticon-check-circle">
+      {
+        args.type === 'info' ? <Icon icon="info-circle" /> :
+        args.type === 'success' ? <Icon icon="check-circle" /> :
+        args.type === 'error' ? <Icon icon="exclamation-triangle" /> :
+        args.type === 'warning' ? <Icon icon="exclamation-triangle" /> : null
+      }
+      </span>
+      <span>{args.content}</span>
+    </div>
+  )
 }
 
 const api: any = {
-  open: notice,
-  config: () => { },
-}
+  open: (args: ArgsProps) => {
+    setNotificationInstance(args);
+    notification.notice({
+      closable: false,
+      duration: args.duration === undefined ? defaultDuration : args.duration,
+      onClose: args.onClose,
+      style: args.style || {},
+      className: args.className,
+      key: args.key,
+      content: getRCNoticeProps(args)
+    });
+  }
+};
 
-export function attachTypeApi(originalApi: any, type: string) {
-  originalApi[type] = (
-    content: ConfigContent,
-    duration?: ConfigDuration,
-    onClose?: ConfigOnClose,
-  ) => {
-    if (isArgsProps(content)) {
-      return originalApi.open({ ...content, type });
+['info', 'success', 'warning', 'error'].forEach(type => {
+  api[type] = (content: ReactNode, duration?: ConfigDuration, onClose?: () => void) => {
+    let extendObject: ArgsProps = {
+      content
     }
-
     if (typeof duration === 'function') {
-      onClose = duration;
-      duration = undefined;
+      extendObject.onClose = duration
+    } else {
+      if (typeof duration !== 'undefined') {
+        extendObject.duration = duration
+      }
+      if (typeof onClose === 'function') {
+        extendObject.onClose = onClose
+      }
     }
-
-    return originalApi.open({ content, duration, type, onClose });
-  };
-}
-
-['success', 'info', 'warning', 'error', 'loading'].forEach(type => attachTypeApi(api, type));
+    api.open({
+      ...extendObject,
+      type
+    })
+  }
+})
 
 api.warn = api.warning;
 
-export default api as MessageApi;
+export interface MessageInstance {
+  info(content: ReactNode, duration?: ConfigDuration, onClose?: () => void): void;
+  success(content: ReactNode, duration?: ConfigDuration, onClose?: () => void): void;
+  warning(content: ReactNode, duration?: ConfigDuration, onClose?: () => void): void;
+  warn(content: ReactNode, duration?: ConfigDuration, onClose?: () => void): void;
+  error(content: ReactNode, duration?: ConfigDuration, onClose?: () => void): void;
+  open(config: ArgsProps): void;
+}
+
+export default api as MessageInstance;

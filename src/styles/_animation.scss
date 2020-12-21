@@ -2,3 +2,52 @@
 @include zoom-animation('left', scale(.45, .45), scale(1, 1), top left);
 @include zoom-animation('right', scale(.45, .45), scale(1, 1), top right);
 @include zoom-animation('bottom', scaleY(0), scaleY(1),  center bottom);
+
+.move-up-appear,.move-up-enter {
+  opacity: 0;
+  -webkit-animation-timing-function: cubic-bezier(.08,.82,.17,1);
+  animation-timing-function: cubic-bezier(.08,.82,.17,1)
+}
+
+.ship-message-notice.move-up-appear.move-up-appear-active {
+  -webkit-animation-name: shipMoveUpIn;
+  animation-name: shipMoveUpIn;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+}
+
+@-webkit-keyframes shipMoveUpIn {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    opacity: 1;
+  }
+}
+
+@keyframes shipMoveUpIn {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    opacity: 1;
+  }
+}

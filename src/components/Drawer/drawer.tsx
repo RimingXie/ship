@@ -1,7 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
+import RCDrawer from 'rc-drawer';
 
-export interface DrawerProps extends React.HTMLAttributes<HTMLElement>{
+export interface DrawerProps extends React.HTMLAttributes<HTMLElement> {
 
 }
 
@@ -13,12 +14,14 @@ export interface DrawerProps extends React.HTMLAttributes<HTMLElement>{
  * ```
  */
 export const Drawer: React.FC<DrawerProps> = (props) => {
-  const {className, ...others} = props
+  const { className, ...others } = props
   const classes = classNames('drawer', className, {
 
   })
   return (
-    <div className={classes} {...others}></div>
+    <RCDrawer>
+      <div className={classes} {...others}>this is drawer</div>
+    </RCDrawer>
   )
 }
 

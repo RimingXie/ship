@@ -1,0 +1,322 @@
+.ship-notification {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: $font-size-sm;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
+  position: fixed;
+  z-index: 1010;
+  margin: 0 24px 0 0;
+}
+
+.ship-notification-bottomLeft,
+.ship-notification-topLeft {
+  margin-right: 0;
+  margin-left: 24px;
+}
+
+.ship-notification-bottomLeft
+  .ship-notification-fade-appear.ship-notification-fade-appear-active,
+.ship-notification-bottomLeft
+  .ship-notification-fade-enter.ship-notification-fade-enter-active,
+.ship-notification-topLeft
+  .ship-notification-fade-appear.ship-notification-fade-appear-active,
+.ship-notification-topLeft
+  .ship-notification-fade-enter.ship-notification-fade-enter-active {
+  -webkit-animation-name: NotificationLeftFadeIn;
+  animation-name: NotificationLeftFadeIn;
+}
+
+.ship-notification-close-icon {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.ship-notification-hook-holder,
+.ship-notification-notice {
+  position: relative;
+  width: 384px;
+  max-width: calc(100vw - 48px);
+  margin-bottom: 16px;
+  margin-left: auto;
+  overflow: hidden;
+  word-wrap: break-word;
+  background: $white;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+    0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+    0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+}
+
+.ship-notification-bottomLeft .ship-notification-hook-holder,
+.ship-notification-bottomLeft .ship-notification-notice,
+.ship-notification-topLeft .ship-notification-hook-holder,
+.ship-notification-topLeft .ship-notification-notice {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.ship-notification-hook-holder > .ship-notification-notice {
+  margin-bottom: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.ship-notification-notice {
+  padding: 16px 24px;
+  line-height: 1.5715;
+}
+
+.ship-notification-notice-message {
+  margin-bottom: 8px;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.ship-notification-notice-message-single-line-auto-margin {
+  display: block;
+  width: calc(264px - 100%);
+  max-width: 4px;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.ship-notification-notice-message-single-line-auto-margin:before {
+  display: block;
+  content: "";
+}
+
+.ship-notification-notice-description {
+  font-size: 14px;
+}
+
+.ship-notification-notice-closable .ship-notification-notice-message {
+  padding-right: 24px;
+}
+
+.ship-notification-notice-with-icon .ship-notification-notice-message {
+  margin-bottom: 4px;
+  margin-left: 48px;
+  font-size: 16px;
+}
+
+.ship-notification-notice-with-icon .ship-notification-notice-description {
+  margin-left: 48px;
+  font-size: 14px;
+}
+
+.ship-notification-notice-icon {
+  position: absolute;
+  margin-left: 4px;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.anticon.ship-notification-notice-icon-success {
+  color: $success;
+}
+
+.anticon.ship-notification-notice-icon-info {
+  color: $primary;
+}
+
+.anticon.ship-notification-notice-icon-warning {
+  color: $warning;
+}
+
+.anticon.ship-notification-notice-icon-error {
+  color: $danger;
+}
+
+.ship-notification-notice-close {
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  color: rgba(0, 0, 0, 0.45);
+  outline: none;
+  cursor: pointer;
+}
+
+.ship-notification-notice-close:hover {
+  color: rgba(0, 0, 0, 0.67);
+}
+
+.ship-notification-notice-btn {
+  float: right;
+  margin-top: 16px;
+}
+
+.ship-notification .notification-fade-effect {
+  -webkit-animation-duration: 0.24s;
+  animation-duration: 0.24s;
+  -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.ship-notification-fade-appear,
+.ship-notification-fade-enter {
+  opacity: 0;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.ship-notification-fade-appear,
+.ship-notification-fade-enter,
+.ship-notification-fade-leave {
+  -webkit-animation-duration: 0.24s;
+  animation-duration: 0.24s;
+  -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.ship-notification-fade-leave {
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.ship-notification-fade-appear.ship-notification-fade-appear-active,
+.ship-notification-fade-enter.ship-notification-fade-enter-active {
+  -webkit-animation-name: NotificationFadeIn;
+  animation-name: NotificationFadeIn;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+
+.ship-notification-fade-leave.ship-notification-fade-leave-active {
+  -webkit-animation-name: NotificationFadeOut;
+  animation-name: NotificationFadeOut;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+
+@-webkit-keyframes NotificationFadeIn {
+  0% {
+    left: 384px;
+    opacity: 0;
+  }
+
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes NotificationFadeIn {
+  0% {
+    left: 384px;
+    opacity: 0;
+  }
+
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes NotificationLeftFadeIn {
+  0% {
+    right: 384px;
+    opacity: 0;
+  }
+
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes NotificationLeftFadeIn {
+  0% {
+    right: 384px;
+    opacity: 0;
+  }
+
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes NotificationFadeOut {
+  0% {
+    max-height: 150px;
+    margin-bottom: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    opacity: 1;
+  }
+
+  to {
+    max-height: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes NotificationFadeOut {
+  0% {
+    max-height: 150px;
+    margin-bottom: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    opacity: 1;
+  }
+
+  to {
+    max-height: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+  }
+}
+
+.ship-notification-rtl {
+  direction: rtl;
+}
+
+.ship-notification-rtl
+  .ship-notification-notice-closable
+  .ship-notification-notice-message {
+  padding-right: 0;
+  padding-left: 24px;
+}
+
+.ship-notification-rtl
+  .ship-notification-notice-with-icon
+  .ship-notification-notice-description,
+.ship-notification-rtl
+  .ship-notification-notice-with-icon
+  .ship-notification-notice-message {
+  margin-right: 48px;
+  margin-left: 0;
+}
+
+.ship-notification-rtl .ship-notification-notice-icon {
+  margin-right: 4px;
+  margin-left: 0;
+}
+
+.ship-notification-rtl .ship-notification-notice-close {
+  right: auto;
+  left: 22px;
+}
+
+.ship-notification-rtl .ship-notification-notice-btn {
+  float: left;
+}
