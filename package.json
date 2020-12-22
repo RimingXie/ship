@@ -52,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@rc-util/types": "^0.1.1",
     "@storybook/addon-actions": "^6.1.10",
     "@storybook/addon-essentials": "^6.1.10",
     "@storybook/addon-links": "^6.1.10",
@@ -63,6 +64,7 @@
     "node-sass": "^4.14.1",
     "rc-drawer": "^4.1.0",
     "rc-notification": "^4.5.4",
+    "rc-util": "^5.5.1",
     "rimraf": "^3.0.2"
   }
 }

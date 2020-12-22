@@ -1,0 +1,293 @@
+
+.ship-modal {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: rgba(0,0,0,.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
+  pointer-events: none;
+  position: relative;
+  top: 100px;
+  width: auto;
+  max-width: calc(100vw - 32px);
+  margin: 0 auto;
+  padding: 0 0 24px
+}
+
+.ship-modal.zoom-appear,.ship-modal.zoom-enter {
+  -webkit-transform: none;
+  transform: none;
+  opacity: 0;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+.ship-modal-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  height: 100%;
+  background-color: rgba(0,0,0,.45)
+}
+
+.ship-modal-mask-hidden {
+  display: none
+}
+
+.ship-modal-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  outline: 0;
+  -webkit-overflow-scrolling: touch;
+  z-index: 1000
+}
+
+.ship-modal-title {
+  margin: 0;
+  color: rgba(0,0,0,.85);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  word-wrap: break-word
+}
+
+.ship-modal-content {
+  position: relative;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 0;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 3px 6px -4px rgba(0,0,0,.12),0 6px 16px 0 rgba(0,0,0,.08),0 9px 28px 8px rgba(0,0,0,.05);
+  box-shadow: 0 3px 6px -4px rgba(0,0,0,.12),0 6px 16px 0 rgba(0,0,0,.08),0 9px 28px 8px rgba(0,0,0,.05);
+  pointer-events: auto
+}
+
+.ship-modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  padding: 0;
+  color: rgba(0,0,0,.45);
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  background: 0 0;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: color .3s;
+  transition: color .3s
+}
+
+.ship-modal-close-x {
+  display: block;
+  width: 56px;
+  height: 56px;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 56px;
+  text-align: center;
+  text-transform: none;
+  text-rendering: auto
+}
+
+.ship-modal-close:focus,.ship-modal-close:hover {
+  color: rgba(0,0,0,.75);
+  text-decoration: none
+}
+
+.ship-modal-header {
+  padding: 16px 24px;
+  color: rgba(0,0,0,.85);
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  border-radius: 2px 2px 0 0
+}
+
+.ship-modal-body {
+  padding: 24px;
+  font-size: 14px;
+  line-height: 1.5715;
+  word-wrap: break-word
+}
+
+.ship-modal-footer {
+  padding: 10px 16px;
+  text-align: right;
+  background: 0 0;
+  border-top: 1px solid #f0f0f0;
+  border-radius: 0 0 2px 2px
+}
+
+.ship-modal-footer button+button {
+  margin-bottom: 0;
+  margin-left: 8px
+}
+
+.ship-modal-open {
+  overflow: hidden
+}
+
+.ship-modal-centered {
+  text-align: center
+}
+
+.ship-modal-centered:before {
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  vertical-align: middle;
+  content: ""
+}
+
+.ship-modal-centered .ship-modal {
+  top: 0;
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle
+}
+
+@media(max-width: 767px) {
+  .ship-modal {
+      max-width:calc(100vw - 16px);
+      margin: 8px auto
+  }
+
+  .ship-modal-centered .ship-modal {
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1
+  }
+}
+
+.ship-modal-confirm .ship-modal-header {
+  display: none
+}
+
+.ship-modal-confirm .ship-modal-body {
+  padding: 32px 32px 24px
+}
+
+.ship-modal-confirm-body-wrapper:before {
+  display: table;
+  content: ""
+}
+
+.ship-modal-confirm-body-wrapper:after {
+  display: table;
+  clear: both;
+  content: ""
+}
+
+.ship-modal-confirm-body .ship-modal-confirm-title {
+  display: block;
+  overflow: hidden;
+  color: rgba(0,0,0,.85);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.4
+}
+
+.ship-modal-confirm-body .ship-modal-confirm-content {
+  margin-top: 8px;
+  color: rgba(0,0,0,.85);
+  font-size: 14px
+}
+
+.ship-modal-confirm-body>.anticon {
+  float: left;
+  margin-right: 16px;
+  font-size: 22px
+}
+
+.ship-modal-confirm-body>.anticon+.ship-modal-confirm-title+.ship-modal-confirm-content {
+  margin-left: 38px
+}
+
+.ship-modal-confirm .ship-modal-confirm-btns {
+  float: right;
+  margin-top: 24px
+}
+
+.ship-modal-confirm .ship-modal-confirm-btns button+button {
+  margin-bottom: 0;
+  margin-left: 8px
+}
+
+.ship-modal-confirm-error .ship-modal-confirm-body>.anticon {
+  color: #ff4d4f
+}
+
+.ship-modal-confirm-confirm .ship-modal-confirm-body>.anticon,.ship-modal-confirm-warning .ship-modal-confirm-body>.anticon {
+  color: #faad14
+}
+
+.ship-modal-confirm-info .ship-modal-confirm-body>.anticon {
+  color: #1890ff
+}
+
+.ship-modal-confirm-success .ship-modal-confirm-body>.anticon {
+  color: #52c41a
+}
+
+.ship-modal-wrap-rtl {
+  direction: rtl
+}
+
+.ship-modal-wrap-rtl .ship-modal-close {
+  right: auto;
+  left: 0
+}
+
+.ship-modal-wrap-rtl .ship-modal-footer {
+  text-align: left
+}
+
+.ship-modal-wrap-rtl .ship-modal-footer button+button {
+  margin-right: 8px;
+  margin-left: 0
+}
+
+.ship-modal-wrap-rtl .ship-modal-confirm-body {
+  direction: rtl
+}
+
+.ship-modal-wrap-rtl .ship-modal-confirm-body>.anticon {
+  float: right;
+  margin-right: 0;
+  margin-left: 16px
+}
+
+.ship-modal-wrap-rtl .ship-modal-confirm-body>.anticon+.ship-modal-confirm-title+.ship-modal-confirm-content {
+  margin-right: 38px;
+  margin-left: 0
+}
+
+.ship-modal-wrap-rtl .ship-modal-confirm-btns {
+  float: left
+}
+
+.ship-modal-wrap-rtl .ship-modal-confirm-btns button+button {
+  margin-right: 8px;
+  margin-left: 0
+}
+
+.ship-modal-wrap-rtl.ship-modal-centered .ship-modal {
+  text-align: right
+}
