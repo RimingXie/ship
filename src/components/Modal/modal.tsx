@@ -1,7 +1,7 @@
-import React, { CSSProperties, MouseEvent, ReactNode } from 'react';
+import React, { CSSProperties, MouseEvent, ReactNode, SyntheticEvent } from 'react';
 import classNames from 'classnames';
 import Dialog, { DialogProps } from 'rc-dialog'
-// import addEventListener from 'rc-util/lib/Dom/addEventListener';
+import addEventListener from 'rc-util/lib/Dom/addEventListener';
 import Button, { ButtonProps, ButtonType } from '../Button/button';
 import Icon from '../Icon';
 const prefixCls = 'ship-modal'
@@ -15,15 +15,15 @@ const getClickPosition = (e: MouseEvent) => {
   // 100ms 内发生过点击事件，则从点击位置动画展示
   // 否则直接 zoom 展示
   // 这样可以兼容非点击方式展开
-  setTimeout(() => {
-    mousePosition = null;
-  }, 100);
+  // setTimeout(() => {
+  //   mousePosition = null;
+  // }, 100);
 };
 
 // 只有点击事件支持从鼠标位置动画展开
-// if (typeof window !== 'undefined' && window.document && window.document.documentElement) {
-//   addEventListener(document.documentElement, 'click', getClickPosition);
-// }
+if (typeof window !== 'undefined' && window.document && window.document.documentElement) {
+  addEventListener(document.documentElement, 'mousemove', getClickPosition);
+}
 
 type getContainerFunc = () => HTMLElement;
 export interface ModalProps {
@@ -80,7 +80,7 @@ export interface ModalProps {
   /** 设置 Modal 的 z-index */
   zIndex?: number;
   /** 点击遮罩层或右上角叉或取消按钮的回调 */
-  onCancel?: (e: MouseEvent<HTMLElement>) => void;
+  onCancel?: (e: SyntheticEvent) => void;
   /** 点击确定回调 */
   onOk?: (e: MouseEvent<HTMLElement>) => void;
   maskTransitionName?: string;
@@ -95,9 +95,60 @@ export interface ModalProps {
  * ```
  */
 export const Modal: React.FC<ModalProps> = (props) => {
-  const { transitionName, maskTransitionName } = props;
-  const contentPrefixCls = `${prefixCls}-confirm`;
-  
+  const { transitionName, maskTransitionName, visible, closeIcon, cancelButtonProps, okButtonProps } = props;
+
+  const handleCancel = (e: SyntheticEvent) => {
+    const { onCancel } = props;
+    if (onCancel) {
+      onCancel(e);
+    }
+  };
+
+  const handlecancelButton = (e: React.MouseEvent<HTMLElement, globalThis.MouseEvent>) => {
+    const { onCancel } = props;
+    if(cancelButtonProps?.onClick){
+      cancelButtonProps?.onClick(e)
+    }else if(onCancel){
+      onCancel(e)
+    }
+  } 
+
+  const handleOkButton = (e: React.MouseEvent<HTMLElement, globalThis.MouseEvent>) => {
+    const { onOk } = props;
+    if(okButtonProps?.onClick){
+      okButtonProps?.onClick(e)
+    }else if(onOk){
+      onOk(e)
+    }
+  }
+
+  const closeIconToRender = (
+    <span className={`${prefixCls}-close-x`}>
+      {closeIcon || <Icon icon="times" />}
+    </span>
+  );
+
+  const defaultFooter = (
+    <>
+      <Button
+        btnType={cancelButtonProps?.btnType ? cancelButtonProps?.btnType : "default"}
+        onClick={handlecancelButton}
+        {...cancelButtonProps}
+        >
+          {props.cancelText}
+      </Button>
+      <Button
+        btnType={props.okType ? props.okType : okButtonProps?.btnType ? okButtonProps?.btnType :'primary'}
+        onClick={handleOkButton}
+        {...okButtonProps}
+      >
+        {props.okText}
+      </Button>
+    </>
+  );
+  const wrapClassNameExtended = classNames(props.wrapClassName, {
+    [`${prefixCls}-centered`]: !!props.centered
+  });
   return (
     <Dialog
       transitionName={transitionName}
@@ -105,29 +156,38 @@ export const Modal: React.FC<ModalProps> = (props) => {
       prefixCls={prefixCls}
       width={props.width}
       title={props.title}
-      onClose={() => { }}
-      visible={props.visible}
+      onClose={handleCancel}
+      visible={visible}
       zIndex={props.zIndex}
       mousePosition={mousePosition!}
-      >
-      <p>first dialog</p>
+      closable={props.closable}
+      mask={props.mask}
+      maskClosable={props.maskClosable}
+      wrapClassName={wrapClassNameExtended}
+      style={props.style}
+      bodyStyle={props.bodyStyle}
+      maskStyle={props.maskStyle}
+      footer={props.footer === undefined ? defaultFooter : props.footer}
+      keyboard={props.keyboard}
+      afterClose={props.afterClose}
+      getContainer={props.getContainer}
+      destroyOnClose={props.destroyOnClose}
+      closeIcon={closeIconToRender}
+      forceRender={props.forceRender}
+      modalRender={props.modalRender}
+      focusTriggerAfterClose={props.focusTriggerAfterClose}
+    >
+      {props.children}
     </Dialog>
+
   )
 }
-
+ 
 Modal.defaultProps = {
   cancelText: '取消',
-  closable: true,
-  closeIcon: <Icon icon="times" />,
-  focusTriggerAfterClose: true,
-  getContainer: () => document.body,
-  keyboard: true,
-  mask: true,
-  maskClosable: true,
   okText: '确定',
   okType: 'primary',
   width: 520,
-  visible: false,
   transitionName: 'zoom',
   maskTransitionName: 'fade',
 }

@@ -213,7 +213,8 @@
 .ship-modal-confirm-body>.anticon {
   float: left;
   margin-right: 16px;
-  font-size: 22px
+  font-size: 22px;
+  line-height: 20px;
 }
 
 .ship-modal-confirm-body>.anticon+.ship-modal-confirm-title+.ship-modal-confirm-content {
@@ -231,19 +232,19 @@
 }
 
 .ship-modal-confirm-error .ship-modal-confirm-body>.anticon {
-  color: #ff4d4f
+  color: $danger;
 }
 
 .ship-modal-confirm-confirm .ship-modal-confirm-body>.anticon,.ship-modal-confirm-warning .ship-modal-confirm-body>.anticon {
-  color: #faad14
+  color: $warning;
 }
 
 .ship-modal-confirm-info .ship-modal-confirm-body>.anticon {
-  color: #1890ff
+  color: $primary;
 }
 
 .ship-modal-confirm-success .ship-modal-confirm-body>.anticon {
-  color: #52c41a
+  color: $success;
 }
 
 .ship-modal-wrap-rtl {
