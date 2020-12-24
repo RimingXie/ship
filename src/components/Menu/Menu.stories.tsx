@@ -1,9 +1,9 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react/types-6-0'
 
-import { Menu, MenuProps } from '../components/Menu/menu'
-import { MenuItem, MenuItemProps } from '../components/Menu/menuItem'
-import { SubMenu, SubMenuProps } from '../components/Menu/subMenu'
+import { Menu, MenuProps } from './menu'
+import { MenuItem, MenuItemProps } from './menuItem'
+import { SubMenu, SubMenuProps } from './subMenu'
 import { action } from '@storybook/addon-actions';
 
 

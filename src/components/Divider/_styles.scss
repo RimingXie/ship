@@ -1,0 +1,122 @@
+.ship-divider {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0,0,0,.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
+  border-top: 1px solid rgba(0,0,0,.06);
+  width: 0px;
+}
+
+.ship-divider-vertical {
+  position: relative;
+  top: -.06em;
+  display: inline-block;
+  height: .9em;
+  margin: 0 8px;
+  vertical-align: middle;
+  border-top: 0;
+  border-left: 1px solid rgba(0,0,0,.06)
+}
+
+.ship-divider-horizontal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  clear: both;
+  width: 100%;
+  min-width: 100%;
+  margin: 24px 0
+}
+
+.ship-divider-horizontal.ship-divider-with-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 16px 0;
+  color: rgba(0,0,0,.85);
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  text-align: center;
+  border-top: 0;
+  border-top-color: rgba(0,0,0,.06)
+}
+
+.ship-divider-horizontal.ship-divider-with-text:after,.ship-divider-horizontal.ship-divider-with-text:before {
+  position: relative;
+  top: 50%;
+  width: 50%;
+  border-top: 1px solid transparent;
+  border-top-color: inherit;
+  border-bottom: 0;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+  content: ""
+}
+
+.ship-divider-horizontal.ship-divider-with-text-left:before {
+  top: 50%;
+  width: 5%
+}
+
+.ship-divider-horizontal.ship-divider-with-text-left:after,.ship-divider-horizontal.ship-divider-with-text-right:before {
+  top: 50%;
+  width: 95%
+}
+
+.ship-divider-horizontal.ship-divider-with-text-right:after {
+  top: 50%;
+  width: 5%
+}
+
+.ship-divider-inner-text {
+  display: inline-block;
+  padding: 0 1em
+}
+
+.ship-divider-dashed {
+  background: 0 0;
+  border: dashed rgba(0,0,0,.06);
+  border-width: 1px 0 0
+}
+
+.ship-divider-horizontal.ship-divider-with-text.ship-divider-dashed {
+  border-top: 0
+}
+
+.ship-divider-horizontal.ship-divider-with-text.ship-divider-dashed:after,.ship-divider-horizontal.ship-divider-with-text.ship-divider-dashed:before {
+  border-style: dashed none none
+}
+
+.ship-divider-vertical.ship-divider-dashed {
+  border-width: 0 0 0 1px
+}
+
+.ship-divider-plain.ship-divider-with-text {
+  color: rgba(0,0,0,.85);
+  font-weight: 400;
+  font-size: 14px
+}
+
+.ship-divider-rtl {
+  direction: rtl
+}
+
+.ship-divider-rtl.ship-divider-horizontal.ship-divider-with-text-left:before {
+  width: 95%
+}
+
+.ship-divider-rtl.ship-divider-horizontal.ship-divider-with-text-left:after,.ship-divider-rtl.ship-divider-horizontal.ship-divider-with-text-right:before {
+  width: 5%
+}
+
+.ship-divider-rtl.ship-divider-horizontal.ship-divider-with-text-right:after {
+  width: 95%
+}

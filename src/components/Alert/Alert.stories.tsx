@@ -1,7 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react/types-6-0'
 
-import { Alert, AlertProps } from '../components/Alert/alert'
+import { Alert, AlertProps } from './alert'
 import { action } from '@storybook/addon-actions';
 
 

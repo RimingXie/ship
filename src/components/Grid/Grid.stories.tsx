@@ -1,8 +1,8 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react/types-6-0'
 
-import { Row, RowProps } from '../components/Grid/row'
-import { Col, ColProps } from '../components/Grid/col'
+import { Row, RowProps } from './row'
+import { Col, ColProps } from './col'
 
 export default {
   title: "ship-ui/Grid",

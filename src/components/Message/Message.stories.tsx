@@ -1,8 +1,8 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0'
 
-import message from '../components/Message'
-import { Button, ButtonProps } from '../components/Button/button'
+import message from '.'
+import { Button, ButtonProps } from '../Button/button'
 
 export default {
   title: 'ship-ui/Message',

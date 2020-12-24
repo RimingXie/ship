@@ -3,8 +3,8 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 
-import { Button } from '../components/Button/button';
-import { Drawer, DrawerProps } from '../components/Drawer/drawer'
+import { Button } from '../Button/button';
+import { Drawer, DrawerProps } from './drawer'
 
 export default {
   title: 'ship-ui/Drawer',

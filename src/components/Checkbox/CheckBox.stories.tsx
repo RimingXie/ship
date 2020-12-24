@@ -1,7 +1,7 @@
 import React from 'react'
 import {Story, Meta} from '@storybook/react/types-6-0'
 
-import {Checkbox, CheckBoxProps} from '../components/Checkbox/checkbox'
+import {Checkbox, CheckBoxProps} from './checkbox'
 
 export default {
   title: "ship-ui/Checkbox",

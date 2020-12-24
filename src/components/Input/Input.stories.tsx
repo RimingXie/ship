@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0'
-import { Input, InputProps } from '../components/Input/input'
+import { Input, InputProps } from './input'
 
 export default {
   title: 'ship-ui/Input',
