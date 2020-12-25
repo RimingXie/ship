@@ -9,7 +9,7 @@ const defaultHeight = 256;
 // const defaultCloseIcon = <Icon icon="times" />
 
 type getContainerFunc = () => HTMLElement;
-type placementType = 'top' | 'right' | 'bottom' | 'left';
+export type placementType = 'top' | 'right' | 'bottom' | 'left';
 export interface DrawerProps {
   /** Drawer 是否可见 */
   visible?: boolean;
