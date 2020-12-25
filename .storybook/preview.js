@@ -1,4 +1,3 @@
-import '../src/styles/index.scss'
 import './demo.scss'
 
 export const parameters = {

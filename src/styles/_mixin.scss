@@ -19,12 +19,14 @@
     color: $hover-color;
     background: $hover-background;
     border-color: $hover-border;
+    outline: none;
   }
   &:focus,
   &.focus {
     color: $hover-color;
     background: $hover-background;
     border-color: $hover-border;
+    outline: none;
   }
   &:disabled,
   &.disabled {

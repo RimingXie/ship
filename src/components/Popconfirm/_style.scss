@@ -1,0 +1,227 @@
+
+.ship-popover {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0,0,0,.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+  font-weight: 400;
+  white-space: normal;
+  text-align: left;
+  cursor: auto;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text
+}
+
+.ship-popover:after {
+  position: absolute;
+  background: hsla(0,0%,100%,.01);
+  content: ""
+}
+
+.ship-popover-hidden {
+  display: none
+}
+
+.ship-popover-placement-top,.ship-popover-placement-topLeft,.ship-popover-placement-topRight {
+  padding-bottom: 10px
+}
+
+.ship-popover-placement-right,.ship-popover-placement-rightBottom,.ship-popover-placement-rightTop {
+  padding-left: 10px
+}
+
+.ship-popover-placement-bottom,.ship-popover-placement-bottomLeft,.ship-popover-placement-bottomRight {
+  padding-top: 10px
+}
+
+.ship-popover-placement-left,.ship-popover-placement-leftBottom,.ship-popover-placement-leftTop {
+  padding-right: 10px
+}
+
+.ship-popover-inner {
+  background-color: #fff;
+  background-clip: padding-box;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 3px 6px -4px rgba(0,0,0,.12),0 6px 16px 0 rgba(0,0,0,.08),0 9px 28px 8px rgba(0,0,0,.05);
+  box-shadow: 0 3px 6px -4px rgba(0,0,0,.12),0 6px 16px 0 rgba(0,0,0,.08),0 9px 28px 8px rgba(0,0,0,.05);
+  -webkit-box-shadow: 0 0 8px rgba(0,0,0,.15)\9;
+  box-shadow: 0 0 8px rgba(0,0,0,.15)\9
+}
+
+@media(-ms-high-contrast:none),screen and (-ms-high-contrast:active) {
+  .ship-popover-inner {
+      -webkit-box-shadow: 0 3px 6px -4px rgba(0,0,0,.12),0 6px 16px 0 rgba(0,0,0,.08),0 9px 28px 8px rgba(0,0,0,.05);
+      box-shadow: 0 3px 6px -4px rgba(0,0,0,.12),0 6px 16px 0 rgba(0,0,0,.08),0 9px 28px 8px rgba(0,0,0,.05)
+  }
+}
+
+.ship-popover-title {
+  min-width: 177px;
+  min-height: 32px;
+  margin: 0;
+  padding: 5px 16px 4px;
+  color: rgba(0,0,0,.85);
+  font-weight: 500;
+  border-bottom: 1px solid #f0f0f0
+}
+
+.ship-popover-inner-content {
+  padding: 12px 16px;
+  color: rgba(0,0,0,.85)
+}
+
+.ship-popover-message {
+  position: relative;
+  padding: 4px 0 12px;
+  color: rgba(0,0,0,.85);
+  font-size: 14px
+}
+
+.ship-popover-message>.anticon {
+  position: absolute;
+  top: 8.0005px;
+  color: #faad14;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.ship-popover-message-title {
+  padding-left: 22px
+}
+
+.ship-popover-buttons {
+  margin-bottom: 4px;
+  text-align: right
+}
+
+.ship-popover-buttons button {
+  margin-left: 8px
+}
+
+.ship-popover-arrow {
+  position: absolute;
+  display: block;
+  width: 8.48528137px;
+  height: 8.48528137px;
+  background: 0 0;
+  border-style: solid;
+  border-width: 4.24264069px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg)
+}
+
+.ship-popover-placement-top>.ship-popover-content>.ship-popover-arrow,.ship-popover-placement-topLeft>.ship-popover-content>.ship-popover-arrow,.ship-popover-placement-topRight>.ship-popover-content>.ship-popover-arrow {
+  bottom: 6.2px;
+  border-color: transparent #fff #fff transparent;
+  -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,.07);
+  box-shadow: 3px 3px 7px rgba(0,0,0,.07)
+}
+
+.ship-popover-placement-top>.ship-popover-content>.ship-popover-arrow {
+  left: 50%;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+  transform: translateX(-50%) rotate(45deg)
+}
+
+.ship-popover-placement-topLeft>.ship-popover-content>.ship-popover-arrow {
+  left: 16px
+}
+
+.ship-popover-placement-topRight>.ship-popover-content>.ship-popover-arrow {
+  right: 16px
+}
+
+.ship-popover-placement-right>.ship-popover-content>.ship-popover-arrow,.ship-popover-placement-rightBottom>.ship-popover-content>.ship-popover-arrow,.ship-popover-placement-rightTop>.ship-popover-content>.ship-popover-arrow {
+  left: 6px;
+  border-color: transparent transparent #fff #fff;
+  -webkit-box-shadow: -3px 3px 7px rgba(0,0,0,.07);
+  box-shadow: -3px 3px 7px rgba(0,0,0,.07)
+}
+
+.ship-popover-placement-right>.ship-popover-content>.ship-popover-arrow {
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg)
+}
+
+.ship-popover-placement-rightTop>.ship-popover-content>.ship-popover-arrow {
+  top: 12px
+}
+
+.ship-popover-placement-rightBottom>.ship-popover-content>.ship-popover-arrow {
+  bottom: 12px
+}
+
+.ship-popover-placement-bottom>.ship-popover-content>.ship-popover-arrow,.ship-popover-placement-bottomLeft>.ship-popover-content>.ship-popover-arrow,.ship-popover-placement-bottomRight>.ship-popover-content>.ship-popover-arrow {
+  top: 6px;
+  border-color: #fff transparent transparent #fff;
+  -webkit-box-shadow: -2px -2px 5px rgba(0,0,0,.06);
+  box-shadow: -2px -2px 5px rgba(0,0,0,.06)
+}
+
+.ship-popover-placement-bottom>.ship-popover-content>.ship-popover-arrow {
+  left: 50%;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+  transform: translateX(-50%) rotate(45deg)
+}
+
+.ship-popover-placement-bottomLeft>.ship-popover-content>.ship-popover-arrow {
+  left: 16px
+}
+
+.ship-popover-placement-bottomRight>.ship-popover-content>.ship-popover-arrow {
+  right: 16px
+}
+
+.ship-popover-placement-left>.ship-popover-content>.ship-popover-arrow,.ship-popover-placement-leftBottom>.ship-popover-content>.ship-popover-arrow,.ship-popover-placement-leftTop>.ship-popover-content>.ship-popover-arrow {
+  right: 6px;
+  border-color: #fff #fff transparent transparent;
+  -webkit-box-shadow: 3px -3px 7px rgba(0,0,0,.07);
+  box-shadow: 3px -3px 7px rgba(0,0,0,.07)
+}
+
+.ship-popover-placement-left>.ship-popover-content>.ship-popover-arrow {
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg)
+}
+
+.ship-popover-placement-leftTop>.ship-popover-content>.ship-popover-arrow {
+  top: 12px
+}
+
+.ship-popover-placement-leftBottom>.ship-popover-content>.ship-popover-arrow {
+  bottom: 12px
+}
+
+.ship-popover-rtl {
+  direction: rtl;
+  text-align: right
+}
+
+.ship-popover-rtl .ship-popover-message-title {
+  padding-right: 22px;
+  padding-left: 16px
+}
+
+.ship-popover-rtl .ship-popover-buttons {
+  text-align: left
+}
+
+.ship-popover-rtl .ship-popover-buttons button {
+  margin-right: 8px;
+  margin-left: 0
+}
