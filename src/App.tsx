@@ -1,61 +1,110 @@
 import React, { useState } from 'react';
 import Button from './components/Button';
-import Popconfirm from './components/Popconfirm/popconfirm'
-import message from './components/Message/index'
-import Progress from './components/Progress/progress';
+import Timeline from './components/Timeline'
 import Divider from './components/Divider';
+import Icon from './components/Icon';
 
 const App: React.FC = () => {
-  const [num, setNum] = useState(20);
-  function confirm(e: React.MouseEvent<HTMLElement>) {
-    console.log(e);
-    message.success('Click on Yes');
-  }
 
-  function cancel(e: React.MouseEvent<HTMLElement>) {
-    console.log(e);
-    message.error('Click on No');
-  }
-  const text = 'Are you sure to delete this task?';
-  React.useEffect(() => {
-    setInterval(() => {
-      let random = Math.ceil(Math.random() * 100)
-      setNum(random)
-    }, 2000);
-  }, [])
 
   return (
-    <>
-      <Progress percent={30} />
-      <Progress percent={num} status="active" />
-      <Progress percent={70} status="exception" />
-      <Progress percent={100} />
-      <Progress percent={50} showInfo={false} />
-      <Divider>小型进度条</Divider>
-      <div style={{ width: 170 }}>
-        <Progress percent={30} size="small" />
-        <Progress percent={num} size="small" status="active" />
-        <Progress percent={70} size="small" status="exception" />
-        <Progress percent={100} size="small" />
-      </div>
-      <Divider>圈形的进度</Divider>
+    <div style={{ margin: 20 }}>
       <div>
-        <Progress type="circle" percent={num} />
-        <Progress type="circle" percent={70} status="exception" />
-        <Progress type="circle" percent={100} />
+        <Divider>基本用法</Divider>
+        <Timeline>
+          <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
+          <Timeline.Item>Solve initial network problems 2015-09-01</Timeline.Item>
+          <Timeline.Item>Technical testing 2015-09-01</Timeline.Item>
+          <Timeline.Item>Network problems being solved 2015-09-01</Timeline.Item>
+        </Timeline>
       </div>
-      <Divider>小型进度圈</Divider>
+
       <div>
-        <Progress type="circle" percent={num} width={80} />
-        <Progress type="circle" percent={70} width={80} status="exception" />
-        <Progress type="circle" percent={100} width={80} />
+        <Divider>圆圈颜色</Divider>
+        <Timeline>
+          <Timeline.Item color="#52c41a">Create a services site 2015-09-01</Timeline.Item>
+          <Timeline.Item color="#52c41a">Create a services site 2015-09-01</Timeline.Item>
+          <Timeline.Item color="#ff4d4f">
+            <p>Solve initial network problems 1</p>
+            <p>Solve initial network problems 2</p>
+            <p>Solve initial network problems 3 2015-09-01</p>
+          </Timeline.Item>
+          <Timeline.Item>
+            <p>Technical testing 1</p>
+            <p>Technical testing 2</p>
+            <p>Technical testing 3 2015-09-01</p>
+          </Timeline.Item>
+          <Timeline.Item color="rgba(0,0,0,.25)">
+            <p>Technical testing 1</p>
+            <p>Technical testing 2</p>
+            <p>Technical testing 3 2015-09-01</p>
+          </Timeline.Item>
+          <Timeline.Item color="rgba(0,0,0,.25)">
+            <p>Technical testing 1</p>
+            <p>Technical testing 2</p>
+            <p>Technical testing 3 2015-09-01</p>
+          </Timeline.Item>
+        </Timeline>
       </div>
-      <Divider>自定义文字格式</Divider>
+
       <div>
-        <Progress type="circle" percent={75} format={percent => `${percent} Days`} />
-        <Progress type="circle" percent={100} format={() => 'Done'} />
+        <Divider>最后一个及排序</Divider>
+        <Timeline pending="Recording..." reverse={true}>
+          <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
+          <Timeline.Item>Solve initial network problems 2015-09-01</Timeline.Item>
+          <Timeline.Item>Technical testing 2015-09-01</Timeline.Item>
+        </Timeline>
       </div>
-    </>
+
+      <div>
+        <Divider>自定义时间轴点</Divider>
+        <Timeline>
+          <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
+          <Timeline.Item>Solve initial network problems 2015-09-01</Timeline.Item>
+          <Timeline.Item dot={<Icon icon="clock" />} color="red">
+            Technical testing 2015-09-01
+          </Timeline.Item>
+          <Timeline.Item>Network problems being solved 2015-09-01</Timeline.Item>
+        </Timeline>
+      </div>
+      <div>
+        <Divider>交替展现</Divider>
+        <Timeline mode="alternate">
+          <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
+          <Timeline.Item color="green">Solve initial network problems 2015-09-01</Timeline.Item>
+          <Timeline.Item dot={<Icon icon="clock" />}>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
+            beatae vitae dicta sunt explicabo.
+          </Timeline.Item>
+          <Timeline.Item color="red">Network problems being solved 2015-09-01</Timeline.Item>
+          <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
+          <Timeline.Item dot={<Icon icon="clock" />}>
+            Technical testing 2015-09-01
+          </Timeline.Item>
+        </Timeline>
+      </div>
+      <div>
+        <Divider>标签</Divider>
+        <Timeline mode="left">
+          <Timeline.Item label="2015-09-01">Create a services</Timeline.Item>
+          <Timeline.Item label="2015-09-01 09:12:11">Solve initial network problems</Timeline.Item>
+          <Timeline.Item>Technical testing</Timeline.Item>
+          <Timeline.Item label="2015-09-01 09:12:11">Network problems being solved</Timeline.Item>
+        </Timeline>
+      </div>
+      <div>
+        <Divider>右侧时间轴点</Divider>
+        <Timeline mode="right">
+          <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
+          <Timeline.Item>Solve initial network problems 2015-09-01</Timeline.Item>
+          <Timeline.Item dot={<Icon icon="clock" />} color="red">
+            Technical testing 2015-09-01
+          </Timeline.Item>
+          <Timeline.Item>Network problems being solved 2015-09-01</Timeline.Item>
+        </Timeline>
+      </div>
+    </div>
   )
 }
 

@@ -12,11 +12,7 @@ export default {
   component: Progress,
 } as Meta;
 
-// const styles: React.CSSProperties = {
-//   textAlign: 'center'
-// }
-
-const defauleProgress: Story<ProgressProps> = (args) => (
+const ProgressBar: Story<ProgressProps> = (args) => (
   <>
     <Progress {...args} />
     <Progress percent={30} />
@@ -24,6 +20,15 @@ const defauleProgress: Story<ProgressProps> = (args) => (
     <Progress percent={70} status="exception" />
     <Progress percent={100} />
     <Progress percent={50} showInfo={false} />
+  </>
+)
+export const 基本用法 = ProgressBar.bind({});
+基本用法.args = {
+
+}
+
+const MiniProgressBar: Story<ProgressProps> = (args) => (
+  <>
     <Divider>小型进度条</Divider>
     <div style={{ width: 170 }}>
       <Progress percent={30} size="small" />
@@ -31,18 +36,45 @@ const defauleProgress: Story<ProgressProps> = (args) => (
       <Progress percent={70} size="small" status="exception" />
       <Progress percent={100} size="small" />
     </div>
+  </>
+)
+export const 小型进度条 = MiniProgressBar.bind({});
+小型进度条.args = {
+
+}
+
+const CircularProgressBar: Story<ProgressProps> = (args) => (
+  <>
     <Divider>圈形的进度</Divider>
     <div>
       <Progress type="circle" percent={40} />
       <Progress type="circle" percent={70} status="exception" />
       <Progress type="circle" percent={100} />
     </div>
+  </>
+)
+export const 圈形的进度 = CircularProgressBar.bind({});
+圈形的进度.args = {
+
+}
+
+const MiniCircularProgressBar: Story<ProgressProps> = (args) => (
+  <>
     <Divider>小型进度圈</Divider>
     <div>
       <Progress type="circle" percent={40} width={80} />
       <Progress type="circle" percent={70} width={80} status="exception" />
       <Progress type="circle" percent={100} width={80} />
     </div>
+  </>
+)
+export const 小型进度圈 = MiniCircularProgressBar.bind({});
+小型进度圈.args = {
+
+}
+
+const CustomTextFormat: Story<ProgressProps> = (args) => (
+  <>
     <Divider>自定义文字格式</Divider>
     <div>
       <Progress type="circle" percent={75} format={percent => `${percent} Days`} />
@@ -51,7 +83,7 @@ const defauleProgress: Story<ProgressProps> = (args) => (
   </>
 )
 
-export const Default = defauleProgress.bind({});
-Default.args = {
+export const 自定义文字格式 = CustomTextFormat.bind({});
+自定义文字格式.args = {
 
 };

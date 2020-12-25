@@ -1,0 +1,237 @@
+
+.ship-timeline {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: rgba(0,0,0,.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
+
+.ship-timeline-item {
+  position: relative;
+  margin: 0;
+  padding-bottom: 20px;
+  font-size: 14px;
+  list-style: none
+}
+
+.ship-timeline-item-tail {
+  position: absolute;
+  top: 10px;
+  left: 4px;
+  height: calc(100% - 10px);
+  border-left: 2px solid #f0f0f0
+}
+
+.ship-timeline-item-pending .ship-timeline-item-head {
+  font-size: 12px;
+  background-color: transparent
+}
+
+.ship-timeline-item-pending .ship-timeline-item-tail {
+  display: none
+}
+
+.ship-timeline-item-head {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border: 2px solid transparent;
+  border-radius: 100px
+}
+
+.ship-timeline-item-head-blue {
+  color: #1890ff;
+  border-color: #1890ff
+}
+
+.ship-timeline-item-head-red {
+  color: #ff4d4f;
+  border-color: #ff4d4f
+}
+
+.ship-timeline-item-head-green {
+  color: #52c41a;
+  border-color: #52c41a
+}
+
+.ship-timeline-item-head-gray {
+  color: rgba(0,0,0,.25);
+  border-color: rgba(0,0,0,.25)
+}
+
+.ship-timeline-item-head-custom {
+  position: absolute;
+  top: 5.5px;
+  left: 5px;
+  width: auto;
+  height: auto;
+  margin-top: 0;
+  padding: 3px 1px;
+  line-height: 1;
+  text-align: center;
+  border: 0;
+  border-radius: 0;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%)
+}
+
+.ship-timeline-item-content {
+  position: relative;
+  top: -7.001px;
+  margin: 0 0 0 26px;
+  word-break: break-word
+}
+
+.ship-timeline-item-last>.ship-timeline-item-tail {
+  display: none
+}
+
+.ship-timeline-item-last>.ship-timeline-item-content {
+  min-height: 48px
+}
+
+.ship-timeline.ship-timeline-alternate .ship-timeline-item-head,.ship-timeline.ship-timeline-alternate .ship-timeline-item-head-custom,.ship-timeline.ship-timeline-alternate .ship-timeline-item-tail,.ship-timeline.ship-timeline-label .ship-timeline-item-head,.ship-timeline.ship-timeline-label .ship-timeline-item-head-custom,.ship-timeline.ship-timeline-label .ship-timeline-item-tail,.ship-timeline.ship-timeline-right .ship-timeline-item-head,.ship-timeline.ship-timeline-right .ship-timeline-item-head-custom,.ship-timeline.ship-timeline-right .ship-timeline-item-tail {
+  left: 50%
+}
+
+.ship-timeline.ship-timeline-alternate .ship-timeline-item-head,.ship-timeline.ship-timeline-label .ship-timeline-item-head,.ship-timeline.ship-timeline-right .ship-timeline-item-head {
+  margin-left: -4px
+}
+
+.ship-timeline.ship-timeline-alternate .ship-timeline-item-head-custom,.ship-timeline.ship-timeline-label .ship-timeline-item-head-custom,.ship-timeline.ship-timeline-right .ship-timeline-item-head-custom {
+  margin-left: 1px
+}
+
+.ship-timeline.ship-timeline-alternate .ship-timeline-item-left .ship-timeline-item-content,.ship-timeline.ship-timeline-label .ship-timeline-item-left .ship-timeline-item-content,.ship-timeline.ship-timeline-right .ship-timeline-item-left .ship-timeline-item-content {
+  left: calc(50% - 4px);
+  width: calc(50% - 14px);
+  text-align: left
+}
+
+.ship-timeline.ship-timeline-alternate .ship-timeline-item-right .ship-timeline-item-content,.ship-timeline.ship-timeline-label .ship-timeline-item-right .ship-timeline-item-content,.ship-timeline.ship-timeline-right .ship-timeline-item-right .ship-timeline-item-content {
+  width: calc(50% - 12px);
+  margin: 0;
+  text-align: right
+}
+
+.ship-timeline.ship-timeline-right .ship-timeline-item-right .ship-timeline-item-head,.ship-timeline.ship-timeline-right .ship-timeline-item-right .ship-timeline-item-head-custom,.ship-timeline.ship-timeline-right .ship-timeline-item-right .ship-timeline-item-tail {
+  left: calc(100% - 6px)
+}
+
+.ship-timeline.ship-timeline-right .ship-timeline-item-right .ship-timeline-item-content {
+  width: calc(100% - 18px)
+}
+
+.ship-timeline.ship-timeline-pending .ship-timeline-item-last .ship-timeline-item-tail {
+  display: block;
+  height: calc(100% - 14px);
+  border-left: 2px dotted #f0f0f0
+}
+
+.ship-timeline.ship-timeline-reverse .ship-timeline-item-last .ship-timeline-item-tail {
+  display: none
+}
+
+.ship-timeline.ship-timeline-reverse .ship-timeline-item-pending .ship-timeline-item-tail {
+  top: 15px;
+  display: block;
+  height: calc(100% - 15px);
+  border-left: 2px dotted #f0f0f0
+}
+
+.ship-timeline.ship-timeline-reverse .ship-timeline-item-pending .ship-timeline-item-content {
+  min-height: 48px
+}
+
+.ship-timeline.ship-timeline-label .ship-timeline-item-label {
+  position: absolute;
+  top: -7.001px;
+  width: calc(50% - 12px);
+  text-align: right
+}
+
+.ship-timeline.ship-timeline-label .ship-timeline-item-right .ship-timeline-item-label {
+  left: calc(50% + 14px);
+  width: calc(50% - 14px);
+  text-align: left
+}
+
+.ship-timeline-rtl {
+  direction: rtl
+}
+
+.ship-timeline-rtl .ship-timeline-item-tail {
+  right: 4px;
+  left: auto;
+  border-right: 2px solid #f0f0f0;
+  border-left: none
+}
+
+.ship-timeline-rtl .ship-timeline-item-head-custom {
+  right: 5px;
+  left: auto;
+  -webkit-transform: translate(50%,-50%);
+  transform: translate(50%,-50%)
+}
+
+.ship-timeline-rtl .ship-timeline-item-content {
+  margin: 0 18px 0 0
+}
+
+.ship-timeline-rtl.ship-timeline.ship-timeline-alternate .ship-timeline-item-head,.ship-timeline-rtl.ship-timeline.ship-timeline-alternate .ship-timeline-item-head-custom,.ship-timeline-rtl.ship-timeline.ship-timeline-alternate .ship-timeline-item-tail,.ship-timeline-rtl.ship-timeline.ship-timeline-label .ship-timeline-item-head,.ship-timeline-rtl.ship-timeline.ship-timeline-label .ship-timeline-item-head-custom,.ship-timeline-rtl.ship-timeline.ship-timeline-label .ship-timeline-item-tail,.ship-timeline-rtl.ship-timeline.ship-timeline-right .ship-timeline-item-head,.ship-timeline-rtl.ship-timeline.ship-timeline-right .ship-timeline-item-head-custom,.ship-timeline-rtl.ship-timeline.ship-timeline-right .ship-timeline-item-tail {
+  right: 50%;
+  left: auto
+}
+
+.ship-timeline-rtl.ship-timeline.ship-timeline-alternate .ship-timeline-item-head,.ship-timeline-rtl.ship-timeline.ship-timeline-label .ship-timeline-item-head,.ship-timeline-rtl.ship-timeline.ship-timeline-right .ship-timeline-item-head {
+  margin-right: -4px;
+  margin-left: 0
+}
+
+.ship-timeline-rtl.ship-timeline.ship-timeline-alternate .ship-timeline-item-head-custom,.ship-timeline-rtl.ship-timeline.ship-timeline-label .ship-timeline-item-head-custom,.ship-timeline-rtl.ship-timeline.ship-timeline-right .ship-timeline-item-head-custom {
+  margin-right: 1px;
+  margin-left: 0
+}
+
+.ship-timeline-rtl.ship-timeline.ship-timeline-alternate .ship-timeline-item-left .ship-timeline-item-content,.ship-timeline-rtl.ship-timeline.ship-timeline-label .ship-timeline-item-left .ship-timeline-item-content,.ship-timeline-rtl.ship-timeline.ship-timeline-right .ship-timeline-item-left .ship-timeline-item-content {
+  right: calc(50% - 4px);
+  left: auto;
+  text-align: right
+}
+
+.ship-timeline-rtl.ship-timeline.ship-timeline-alternate .ship-timeline-item-right .ship-timeline-item-content,.ship-timeline-rtl.ship-timeline.ship-timeline-label .ship-timeline-item-right .ship-timeline-item-content,.ship-timeline-rtl.ship-timeline.ship-timeline-right .ship-timeline-item-right .ship-timeline-item-content {
+  text-align: left
+}
+
+.ship-timeline-rtl.ship-timeline.ship-timeline-right .ship-timeline-item-right .ship-timeline-item-head,.ship-timeline-rtl.ship-timeline.ship-timeline-right .ship-timeline-item-right .ship-timeline-item-head-custom,.ship-timeline-rtl.ship-timeline.ship-timeline-right .ship-timeline-item-right .ship-timeline-item-tail {
+  right: 0;
+  left: auto
+}
+
+.ship-timeline-rtl.ship-timeline.ship-timeline-right .ship-timeline-item-right .ship-timeline-item-content {
+  width: 100%;
+  margin-right: 18px;
+  text-align: right
+}
+
+.ship-timeline-rtl.ship-timeline.ship-timeline-pending .ship-timeline-item-last .ship-timeline-item-tail,.ship-timeline-rtl.ship-timeline.ship-timeline-reverse .ship-timeline-item-pending .ship-timeline-item-tail {
+  border-right: 2px dotted #f0f0f0;
+  border-left: none
+}
+
+.ship-timeline-rtl.ship-timeline.ship-timeline-label .ship-timeline-item-label {
+  text-align: left
+}
+
+.ship-timeline-rtl.ship-timeline.ship-timeline-label .ship-timeline-item-right .ship-timeline-item-label {
+  right: calc(50% + 14px);
+  text-align: right
+}

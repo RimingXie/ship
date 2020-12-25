@@ -1,7 +1,7 @@
 import React from 'react';
 import Notification from 'rc-notification';
 import Icon from '../Icon/icon'
-import classNames  from 'classnames'
+import classNames from 'classnames'
 import { IconName } from '@fortawesome/fontawesome-svg-core';
 
 let notification: any = {};
@@ -88,7 +88,7 @@ function getPlacementStyle(
 
 const setNotificationInstance = (args: ArgsProps) => {
   const post = args.placement || 'topRight'
-  if(!notification[post]){
+  if (!notification[post]) {
 
     const classes = classNames(args.className, `${prefixCls}-${post}`)
 
@@ -99,14 +99,14 @@ const setNotificationInstance = (args: ArgsProps) => {
       getContainer: args.getContainer ? args.getContainer : () => document.body,
     }, (notice) => notification[post] = notice)
   }
-} 
+}
 
 const getRCNoticeProps = (args: ArgsProps) => {
   let iconNode: React.ReactNode = null;
   if (args.icon) {
     iconNode = <span className={`${prefixCls}-notice-icon`}>{args.icon}</span>
   } else if (args.type) {
-    const classes = classNames(`${prefixCls}-notice-icon`,'anticon',`${prefixCls}-notice-icon-${args.type}`)
+    const classes = classNames(`${prefixCls}-notice-icon`, 'anticon', `${prefixCls}-notice-icon-${args.type}`)
     iconNode = <span className={classes}>
       {
         args.type === 'info' && <Icon icon="info-circle" />
@@ -150,7 +150,8 @@ const api: any = {
       getContainer,
       onClick: args.onClick,
       onClose: args.onClose,
-      content: getRCNoticeProps(args)
+      content: getRCNoticeProps(args),
+      style: args.style
     });
   }
 };

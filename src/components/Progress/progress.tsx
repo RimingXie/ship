@@ -54,7 +54,7 @@ const CircleColors: any = {
  * ```
  */
 export const Progress: React.FC<ProgressProps> = (props) => {
-  const { className, type, percent, strokeWidth, status, showInfo, size, width, format } = props;
+  const { className, type, percent = 0, strokeWidth, status, showInfo, size, width, format } = props;
   const bgHeight = strokeWidth ? strokeWidth : size === 'small' ? 6 : 8;
   let copyStatus = status;
   if (showInfo && percent! >= 100) {
