@@ -62,9 +62,11 @@
     "@types/classnames": "^2.2.11",
     "classnames": "^2.2.6",
     "node-sass": "^4.14.1",
+    "rc-checkbox": "^2.3.2",
     "rc-drawer": "^4.1.0",
     "rc-notification": "^4.5.4",
     "rc-progress": "^3.1.1",
+    "rc-tabs": "^11.7.3",
     "rc-tooltip": "^5.0.1",
     "rc-util": "^5.5.1",
     "rimraf": "^3.0.2"

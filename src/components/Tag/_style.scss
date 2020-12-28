@@ -1,0 +1,107 @@
+
+.ship-tag {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: rgba(0,0,0,.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
+  display: inline-block;
+  height: auto;
+  margin: 0 8px 0 0;
+  padding: 0 7px;
+  font-size: 12px;
+  line-height: 20px;
+  white-space: nowrap;
+  background: #fafafa;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  opacity: 1;
+  -webkit-transition: all .3s;
+  transition: all .3s
+}
+
+.ship-tag:hover {
+  opacity: .85
+}
+
+.ship-tag,.ship-tag a,.ship-tag a:hover {
+  color: rgba(0,0,0,.85)
+}
+
+.ship-tag>a:first-child:last-child {
+  display: inline-block;
+  margin: 0 -8px;
+  padding: 0 8px
+}
+
+.ship-tag-close-icon {
+  margin-left: 3px;
+  color: rgba(0,0,0,.45);
+  font-size: 10px;
+  cursor: pointer;
+  -webkit-transition: all .3s;
+  transition: all .3s
+}
+
+.ship-tag-close-icon:hover {
+  color: rgba(0,0,0,.85)
+}
+
+.ship-tag-has-color {
+  border-color: transparent
+}
+
+.ship-tag-has-color,.ship-tag-has-color .anticon-close,.ship-tag-has-color .anticon-close:hover,.ship-tag-has-color a,.ship-tag-has-color a:hover {
+  color: #fff
+}
+
+.ship-tag-checkable {
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer
+}
+
+.ship-tag-checkable:not(.ship-tag-checkable-checked):hover {
+  color: #1890ff
+}
+
+.ship-tag-checkable-checked,.ship-tag-checkable:active {
+  color: #fff
+}
+
+.ship-tag-checkable-checked {
+  background-color: #1890ff
+}
+
+.ship-tag-checkable:active {
+  background-color: #096dd9
+}
+
+.ship-tag-hidden {
+  display: none
+}
+
+.ship-tag>.anticon+span,.ship-tag>span+.anticon {
+  margin-left: 7px
+}
+
+.ship-tag.ship-tag-rtl {
+  margin-right: 0;
+  margin-left: 8px;
+  direction: rtl;
+  text-align: right
+}
+
+.ship-tag-rtl .ship-tag-close-icon {
+  margin-right: 3px;
+  margin-left: 0
+}
+
+.ship-tag-rtl.ship-tag>.anticon+span,.ship-tag-rtl.ship-tag>span+.anticon {
+  margin-right: 7px;
+  margin-left: 0
+}

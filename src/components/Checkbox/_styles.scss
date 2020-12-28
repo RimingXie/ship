@@ -1,4 +1,5 @@
-.checkbox {
+
+.ship-checkbox {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
@@ -20,11 +21,11 @@
   cursor: pointer
 }
 
-.checkbox-input:focus+.checkbox-inner,.checkbox-wrapper:hover .checkbox-inner,.checkbox:hover .checkbox-inner {
+.ship-checkbox-input:focus+.ship-checkbox-inner,.ship-checkbox-wrapper:hover .ship-checkbox-inner,.ship-checkbox:hover .ship-checkbox-inner {
   border-color: #1890ff
 }
 
-.checkbox-checked:after {
+.ship-checkbox-checked:after {
   position: absolute;
   top: 0;
   left: 0;
@@ -40,11 +41,11 @@
   content: ""
 }
 
-.checkbox-wrapper:hover .checkbox:after,.checkbox:hover:after {
+.ship-checkbox-wrapper:hover .ship-checkbox:after,.ship-checkbox:hover:after {
   visibility: visible
 }
 
-.checkbox-inner {
+.ship-checkbox-inner {
   position: relative;
   top: 0;
   left: 0;
@@ -60,7 +61,7 @@
   transition: all .3s
 }
 
-.checkbox-inner:after {
+.ship-checkbox-inner:after {
   position: absolute;
   top: 50%;
   left: 22%;
@@ -78,7 +79,7 @@
   content: " "
 }
 
-.checkbox-input {
+.ship-checkbox-input {
   position: absolute;
   top: 0;
   right: 0;
@@ -91,7 +92,7 @@
   opacity: 0
 }
 
-.checkbox-checked .checkbox-inner:after {
+.ship-checkbox-checked .ship-checkbox-inner:after {
   position: absolute;
   display: table;
   border: 2px solid #fff;
@@ -105,47 +106,47 @@
   content: " "
 }
 
-.checkbox-checked .checkbox-inner {
+.ship-checkbox-checked .ship-checkbox-inner {
   background-color: #1890ff;
   border-color: #1890ff
 }
 
-.checkbox-disabled {
+.ship-checkbox-disabled {
   cursor: not-allowed
 }
 
-.checkbox-disabled.checkbox-checked .checkbox-inner:after {
+.ship-checkbox-disabled.ship-checkbox-checked .ship-checkbox-inner:after {
   border-color: rgba(0,0,0,.25);
   -webkit-animation-name: none;
   animation-name: none
 }
 
-.checkbox-disabled .checkbox-input {
+.ship-checkbox-disabled .ship-checkbox-input {
   cursor: not-allowed
 }
 
-.checkbox-disabled .checkbox-inner {
+.ship-checkbox-disabled .ship-checkbox-inner {
   background-color: #f5f5f5;
   border-color: #d9d9d9!important
 }
 
-.checkbox-disabled .checkbox-inner:after {
+.ship-checkbox-disabled .ship-checkbox-inner:after {
   border-color: #f5f5f5;
   border-collapse: separate;
   -webkit-animation-name: none;
   animation-name: none
 }
 
-.checkbox-disabled+span {
+.ship-checkbox-disabled+span {
   color: rgba(0,0,0,.25);
   cursor: not-allowed
 }
 
-.checkbox-disabled:hover:after,.checkbox-wrapper:hover .checkbox-disabled:after {
+.ship-checkbox-disabled:hover:after,.ship-checkbox-wrapper:hover .ship-checkbox-disabled:after {
   visibility: hidden
 }
 
-.checkbox-wrapper {
+.ship-checkbox-wrapper {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
@@ -162,20 +163,20 @@
   cursor: pointer
 }
 
-.checkbox-wrapper.checkbox-wrapper-disabled {
+.ship-checkbox-wrapper.ship-checkbox-wrapper-disabled {
   cursor: not-allowed
 }
 
-.checkbox-wrapper+.checkbox-wrapper {
+.ship-checkbox-wrapper+.ship-checkbox-wrapper {
   margin-left: 8px
 }
 
-.checkbox+span {
+.ship-checkbox+span {
   padding-right: 8px;
   padding-left: 8px
 }
 
-.checkbox-group {
+.ship-checkbox-group {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
@@ -190,25 +191,25 @@
   display: inline-block
 }
 
-.checkbox-group-item {
+.ship-checkbox-group-item {
   display: inline-block;
   margin-right: 8px
 }
 
-.checkbox-group-item:last-child {
+.ship-checkbox-group-item:last-child {
   margin-right: 0
 }
 
-.checkbox-group-item+.checkbox-group-item {
+.ship-checkbox-group-item+.ship-checkbox-group-item {
   margin-left: 0
 }
 
-.checkbox-indeterminate .checkbox-inner {
+.ship-checkbox-indeterminate .ship-checkbox-inner {
   background-color: #fff;
   border-color: #d9d9d9
 }
 
-.checkbox-indeterminate .checkbox-inner:after {
+.ship-checkbox-indeterminate .ship-checkbox-inner:after {
   top: 50%;
   left: 50%;
   width: 8px;
@@ -221,24 +222,24 @@
   content: " "
 }
 
-.checkbox-indeterminate.checkbox-disabled .checkbox-inner:after {
+.ship-checkbox-indeterminate.ship-checkbox-disabled .ship-checkbox-inner:after {
   background-color: rgba(0,0,0,.25);
   border-color: rgba(0,0,0,.25)
 }
 
-.checkbox-rtl {
+.ship-checkbox-rtl {
   direction: rtl
 }
 
-.checkbox-group-rtl .checkbox-group-item {
+.ship-checkbox-group-rtl .ship-checkbox-group-item {
   margin-right: 0;
   margin-left: 8px
 }
 
-.checkbox-group-rtl .checkbox-group-item:last-child {
+.ship-checkbox-group-rtl .ship-checkbox-group-item:last-child {
   margin-left: 0!important
 }
 
-.checkbox-group-rtl .checkbox-group-item+.checkbox-group-item {
+.ship-checkbox-group-rtl .ship-checkbox-group-item+.ship-checkbox-group-item {
   margin-left: 8px
 }
