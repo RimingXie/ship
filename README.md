@@ -1,22 +1,29 @@
-# Getting Started with Create React App
+# ship-ui
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+居于React开发的UI组件库，仅供学习使用
 
-## Available Scripts
+## 文档地址
+  https://rimingxie.github.io/ship-ui-document/
 
-In the project directory, you can run:
+## 可用脚本
 
-### `yarn start`
+在项目目录中，可以运行:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `yarn storybook`
+
+运行文档程序.\
+open [http://localhost:6006/](http://localhost:6006/) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+### `yarn build-storybook`
+打包文档，生成静态页面.\
+Builds the app for production to the `storybook-static` folder.\
+
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
+运行测试程序.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `yarn build`
@@ -38,12 +45,6 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
 
 # 项目主要技术栈
   ## sass 预编译器
@@ -70,22 +71,14 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 # 动画
   ## 使用 React Transition Group 动画库
   <p>https://reactcommunity.org/react-transition-group/</p>
-  ```bash
-    npm install react-transition-group --save
-    npm install @types/react-transition-group --save
-  ```
+      npm install react-transition-group --save
+      npm install @types/react-transition-group --save
 
 # 文档
   ## 使用 storybook.js 自动生成文档
   <p>https://storybook.js.org/</p>
-  ```bash
-    npx -p @storybook/cli sb init
-  ```  
+      npx -p @storybook/cli sb init
   <p>运行文档</p>
-  ```bash
-    npm run storybook
-  ```
+      npm run storybook
   <p>打包文档</p>
-  ```bash
-    npm run build-storybook
-  ```
+      npm run build-storybook
