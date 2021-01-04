@@ -1,5 +1,5 @@
-
-.ship-drawer {
+$prefix: 'ship-drawer';
+.#{$prefix} {
   position: fixed;
   z-index: 1000;
   width: 0;
@@ -7,122 +7,136 @@
   -webkit-transition: height 0s ease .3s,width 0s ease .3s,-webkit-transform .3s cubic-bezier(.7,.3,.1,1);
   transition: height 0s ease .3s,width 0s ease .3s,-webkit-transform .3s cubic-bezier(.7,.3,.1,1);
   transition: transform .3s cubic-bezier(.7,.3,.1,1),height 0s ease .3s,width 0s ease .3s;
-  transition: transform .3s cubic-bezier(.7,.3,.1,1),height 0s ease .3s,width 0s ease .3s,-webkit-transform .3s cubic-bezier(.7,.3,.1,1)
+  transition: transform .3s cubic-bezier(.7,.3,.1,1),height 0s ease .3s,width 0s ease .3s,-webkit-transform .3s cubic-bezier(.7,.3,.1,1);
+  &>* {
+    -webkit-transition: -webkit-transform .3s cubic-bezier(.7,.3,.1,1),-webkit-box-shadow .3s cubic-bezier(.7,.3,.1,1);
+    transition: -webkit-transform .3s cubic-bezier(.7,.3,.1,1),-webkit-box-shadow .3s cubic-bezier(.7,.3,.1,1);
+    transition: transform .3s cubic-bezier(.7,.3,.1,1),box-shadow .3s cubic-bezier(.7,.3,.1,1);
+    transition: transform .3s cubic-bezier(.7,.3,.1,1),box-shadow .3s cubic-bezier(.7,.3,.1,1),-webkit-transform .3s cubic-bezier(.7,.3,.1,1),-webkit-box-shadow .3s cubic-bezier(.7,.3,.1,1)
+  }
+  .#{$prefix}-content {
+    width: 100%;
+    height: 100%
+  }
+  .ship-picker-clear {
+    background: #fff
+  }
 }
 
-.ship-drawer>* {
-  -webkit-transition: -webkit-transform .3s cubic-bezier(.7,.3,.1,1),-webkit-box-shadow .3s cubic-bezier(.7,.3,.1,1);
-  transition: -webkit-transform .3s cubic-bezier(.7,.3,.1,1),-webkit-box-shadow .3s cubic-bezier(.7,.3,.1,1);
-  transition: transform .3s cubic-bezier(.7,.3,.1,1),box-shadow .3s cubic-bezier(.7,.3,.1,1);
-  transition: transform .3s cubic-bezier(.7,.3,.1,1),box-shadow .3s cubic-bezier(.7,.3,.1,1),-webkit-transform .3s cubic-bezier(.7,.3,.1,1),-webkit-box-shadow .3s cubic-bezier(.7,.3,.1,1)
-}
-
-.ship-drawer-content-wrapper {
+.#{$prefix}-content-wrapper {
   position: absolute;
   width: 100%;
   height: 100%
 }
 
-.ship-drawer .ship-drawer-content {
-  width: 100%;
-  height: 100%
-}
-
-.ship-drawer-left,.ship-drawer-right {
+.#{$prefix}-left,
+.#{$prefix}-right {
   top: 0;
   width: 0;
-  height: 100%
+  height: 100%;
+  .#{$prefix}-content-wrapper {
+    height: 100%
+  }
+  &.#{$prefix}-open {
+    width: 100%;
+    -webkit-transition: -webkit-transform .3s cubic-bezier(.7,.3,.1,1);
+    transition: -webkit-transform .3s cubic-bezier(.7,.3,.1,1);
+    transition: transform .3s cubic-bezier(.7,.3,.1,1);
+    transition: transform .3s cubic-bezier(.7,.3,.1,1),-webkit-transform .3s cubic-bezier(.7,.3,.1,1)
+  }
 }
 
-.ship-drawer-left .ship-drawer-content-wrapper,.ship-drawer-right .ship-drawer-content-wrapper {
-  height: 100%
+.#{$prefix}-left {
+  left: 0;
+  .#{$prefix}-content-wrapper {
+    left: 0
+  }
+  &.#{$prefix}-open{
+    .#{$prefix}-content-wrapper {
+      -webkit-box-shadow: 6px 0 16px -8px rgba(0,0,0,.08),9px 0 28px 0 rgba(0,0,0,.05),12px 0 48px 16px rgba(0,0,0,.03);
+      box-shadow: 6px 0 16px -8px rgba(0,0,0,.08),9px 0 28px 0 rgba(0,0,0,.05),12px 0 48px 16px rgba(0,0,0,.03)
+    }
+  }
 }
 
-.ship-drawer-left.ship-drawer-open,.ship-drawer-right.ship-drawer-open {
-  width: 100%;
-  -webkit-transition: -webkit-transform .3s cubic-bezier(.7,.3,.1,1);
-  transition: -webkit-transform .3s cubic-bezier(.7,.3,.1,1);
-  transition: transform .3s cubic-bezier(.7,.3,.1,1);
-  transition: transform .3s cubic-bezier(.7,.3,.1,1),-webkit-transform .3s cubic-bezier(.7,.3,.1,1)
+.#{$prefix}-right {
+  right: 0;
+  .#{$prefix}-content-wrapper {
+    right: 0
+  }
+  &.#{$prefix}-open{
+    .#{$prefix}-content-wrapper {
+      -webkit-box-shadow: -6px 0 16px -8px rgba(0,0,0,.08),-9px 0 28px 0 rgba(0,0,0,.05),-12px 0 48px 16px rgba(0,0,0,.03);
+      box-shadow: -6px 0 16px -8px rgba(0,0,0,.08),-9px 0 28px 0 rgba(0,0,0,.05),-12px 0 48px 16px rgba(0,0,0,.03)
+    }
+    &.no-mask {
+      right: 1px;
+      -webkit-transform: translateX(1px);
+      transform: translateX(1px)
+    }
+  }
 }
 
-.ship-drawer-left,.ship-drawer-left .ship-drawer-content-wrapper {
-  left: 0
-}
-
-.ship-drawer-left.ship-drawer-open .ship-drawer-content-wrapper {
-  -webkit-box-shadow: 6px 0 16px -8px rgba(0,0,0,.08),9px 0 28px 0 rgba(0,0,0,.05),12px 0 48px 16px rgba(0,0,0,.03);
-  box-shadow: 6px 0 16px -8px rgba(0,0,0,.08),9px 0 28px 0 rgba(0,0,0,.05),12px 0 48px 16px rgba(0,0,0,.03)
-}
-
-.ship-drawer-right,.ship-drawer-right .ship-drawer-content-wrapper {
-  right: 0
-}
-
-.ship-drawer-right.ship-drawer-open .ship-drawer-content-wrapper {
-  -webkit-box-shadow: -6px 0 16px -8px rgba(0,0,0,.08),-9px 0 28px 0 rgba(0,0,0,.05),-12px 0 48px 16px rgba(0,0,0,.03);
-  box-shadow: -6px 0 16px -8px rgba(0,0,0,.08),-9px 0 28px 0 rgba(0,0,0,.05),-12px 0 48px 16px rgba(0,0,0,.03)
-}
-
-.ship-drawer-right.ship-drawer-open.no-mask {
-  right: 1px;
-  -webkit-transform: translateX(1px);
-  transform: translateX(1px)
-}
-
-.ship-drawer-bottom,.ship-drawer-top {
+.#{$prefix}-bottom,
+.#{$prefix}-top {
   left: 0;
   width: 100%;
-  height: 0%
+  height: 0%;
+  .#{$prefix}-content-wrapper {
+    width: 100%
+  }
+  &.#{$prefix}-open {
+    height: 100%;
+    -webkit-transition: -webkit-transform .3s cubic-bezier(.7,.3,.1,1);
+    transition: -webkit-transform .3s cubic-bezier(.7,.3,.1,1);
+    transition: transform .3s cubic-bezier(.7,.3,.1,1);
+    transition: transform .3s cubic-bezier(.7,.3,.1,1),-webkit-transform .3s cubic-bezier(.7,.3,.1,1)
+  }
 }
 
-.ship-drawer-bottom .ship-drawer-content-wrapper,.ship-drawer-top .ship-drawer-content-wrapper {
-  width: 100%
+.#{$prefix}-top {
+  top: 0;
+  &.#{$prefix}-open{
+    .#{$prefix}-content-wrapper {
+      -webkit-box-shadow: 0 6px 16px -8px rgba(0,0,0,.08),0 9px 28px 0 rgba(0,0,0,.05),0 12px 48px 16px rgba(0,0,0,.03);
+      box-shadow: 0 6px 16px -8px rgba(0,0,0,.08),0 9px 28px 0 rgba(0,0,0,.05),0 12px 48px 16px rgba(0,0,0,.03)
+    }
+  }
 }
 
-.ship-drawer-bottom.ship-drawer-open,.ship-drawer-top.ship-drawer-open {
-  height: 100%;
-  -webkit-transition: -webkit-transform .3s cubic-bezier(.7,.3,.1,1);
-  transition: -webkit-transform .3s cubic-bezier(.7,.3,.1,1);
-  transition: transform .3s cubic-bezier(.7,.3,.1,1);
-  transition: transform .3s cubic-bezier(.7,.3,.1,1),-webkit-transform .3s cubic-bezier(.7,.3,.1,1)
+.#{$prefix}-bottom {
+  bottom: 0;
+  .#{$prefix}-content-wrapper {
+    bottom: 0
+  }
+  &.#{$prefix}-open{
+    .#{$prefix}-content-wrapper {
+      -webkit-box-shadow: 0 -6px 16px -8px rgba(0,0,0,.08),0 -9px 28px 0 rgba(0,0,0,.05),0 -12px 48px 16px rgba(0,0,0,.03);
+      box-shadow: 0 -6px 16px -8px rgba(0,0,0,.08),0 -9px 28px 0 rgba(0,0,0,.05),0 -12px 48px 16px rgba(0,0,0,.03)
+    }
+    &.no-mask {
+      bottom: 1px;
+      -webkit-transform: translateY(1px);
+      transform: translateY(1px)
+    }
+  }
 }
 
-.ship-drawer-top {
-  top: 0
+.#{$prefix}{
+  &.#{$prefix}-open {
+    .#{$prefix}-mask {
+      height: 100%;
+      opacity: 1;
+      -webkit-transition: none;
+      transition: none;
+      -webkit-animation: antdDrawerFadeIn .3s cubic-bezier(.7,.3,.1,1);
+      animation: antdDrawerFadeIn .3s cubic-bezier(.7,.3,.1,1);
+      pointer-events: auto
+    }
+  }
 }
 
-.ship-drawer-top.ship-drawer-open .ship-drawer-content-wrapper {
-  -webkit-box-shadow: 0 6px 16px -8px rgba(0,0,0,.08),0 9px 28px 0 rgba(0,0,0,.05),0 12px 48px 16px rgba(0,0,0,.03);
-  box-shadow: 0 6px 16px -8px rgba(0,0,0,.08),0 9px 28px 0 rgba(0,0,0,.05),0 12px 48px 16px rgba(0,0,0,.03)
-}
-
-.ship-drawer-bottom,.ship-drawer-bottom .ship-drawer-content-wrapper {
-  bottom: 0
-}
-
-.ship-drawer-bottom.ship-drawer-open .ship-drawer-content-wrapper {
-  -webkit-box-shadow: 0 -6px 16px -8px rgba(0,0,0,.08),0 -9px 28px 0 rgba(0,0,0,.05),0 -12px 48px 16px rgba(0,0,0,.03);
-  box-shadow: 0 -6px 16px -8px rgba(0,0,0,.08),0 -9px 28px 0 rgba(0,0,0,.05),0 -12px 48px 16px rgba(0,0,0,.03)
-}
-
-.ship-drawer-bottom.ship-drawer-open.no-mask {
-  bottom: 1px;
-  -webkit-transform: translateY(1px);
-  transform: translateY(1px)
-}
-
-.ship-drawer.ship-drawer-open .ship-drawer-mask {
-  height: 100%;
-  opacity: 1;
-  -webkit-transition: none;
-  transition: none;
-  -webkit-animation: antdDrawerFadeIn .3s cubic-bezier(.7,.3,.1,1);
-  animation: antdDrawerFadeIn .3s cubic-bezier(.7,.3,.1,1);
-  pointer-events: auto
-}
-
-.ship-drawer-title {
+.#{$prefix}-title {
   margin: 0;
   color: rgba(0,0,0,.85);
   font-weight: 500;
@@ -130,7 +144,7 @@
   line-height: 22px
 }
 
-.ship-drawer-content {
+.#{$prefix}-content {
   position: relative;
   z-index: 1;
   overflow: auto;
@@ -139,7 +153,7 @@
   border: 0
 }
 
-.ship-drawer-close {
+.#{$prefix}-close {
   position: absolute;
   top: 0;
   right: 0;
@@ -160,32 +174,37 @@
   cursor: pointer;
   -webkit-transition: color .3s;
   transition: color .3s;
-  text-rendering: auto
+  text-rendering: auto;
+  &:focus,
+  .#{$prefix}-close{
+    &:hover {
+      color: rgba(0,0,0,.75);
+      text-decoration: none
+    }
+  }
 }
 
-.ship-drawer-close:focus,.ship-drawer-close:hover {
-  color: rgba(0,0,0,.75);
-  text-decoration: none
+.#{$prefix}-header-no-title {
+  .#{$prefix}-close {
+    margin-right: var(--scroll-bar);
+    padding-right: calc(20px - var(--scroll-bar))
+  }
 }
 
-.ship-drawer-header-no-title .ship-drawer-close {
-  margin-right: var(--scroll-bar);
-  padding-right: calc(20px - var(--scroll-bar))
-}
-
-.ship-drawer-header {
+.#{$prefix}-header {
   position: relative;
   padding: 16px 24px;
   border-bottom: 1px solid #f0f0f0;
   border-radius: 2px 2px 0 0
 }
 
-.ship-drawer-header,.ship-drawer-header-no-title {
+.#{$prefix}-header,
+.#{$prefix}-header-no-title {
   color: rgba(0,0,0,.85);
   background: #fff
 }
 
-.ship-drawer-wrapper-body {
+.#{$prefix}-wrapper-body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -199,7 +218,7 @@
   height: 100%
 }
 
-.ship-drawer-body {
+.#{$prefix}-body {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
@@ -210,14 +229,14 @@
   word-wrap: break-word
 }
 
-.ship-drawer-footer {
+.#{$prefix}-footer {
   -ms-flex-negative: 0;
   flex-shrink: 0;
   padding: 10px;
   border-top: 1px solid #f0f0f0
 }
 
-.ship-drawer-mask {
+.#{$prefix}-mask {
   position: absolute;
   top: 0;
   left: 0;
@@ -231,13 +250,9 @@
   pointer-events: none
 }
 
-.ship-drawer-open-content {
+.#{$prefix}-open-content {
   -webkit-box-shadow: 0 3px 6px -4px rgba(0,0,0,.12),0 6px 16px 0 rgba(0,0,0,.08),0 9px 28px 8px rgba(0,0,0,.05);
   box-shadow: 0 3px 6px -4px rgba(0,0,0,.12),0 6px 16px 0 rgba(0,0,0,.08),0 9px 28px 8px rgba(0,0,0,.05)
-}
-
-.ship-drawer .ship-picker-clear {
-  background: #fff
 }
 
 @-webkit-keyframes antdDrawerFadeIn {
@@ -260,11 +275,10 @@
   }
 }
 
-.ship-drawer-rtl {
-  direction: rtl
-}
-
-.ship-drawer-rtl .ship-drawer-close {
-  right: auto;
-  left: 0
+.#{$prefix}-rtl {
+  direction: rtl;
+  .#{$prefix}-close {
+    right: auto;
+    left: 0
+  }
 }

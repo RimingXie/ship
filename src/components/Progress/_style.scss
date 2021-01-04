@@ -1,5 +1,5 @@
-
-.ship-progress {
+$prefix: 'ship-progress';
+.#{$prefix} {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
@@ -14,17 +14,17 @@
   display: inline-block
 }
 
-.ship-progress-line {
+.#{$prefix}-line {
   position: relative;
   width: 100%;
   font-size: 14px
 }
 
-.ship-progress-steps {
+.#{$prefix}-steps {
   display: inline-block
 }
 
-.ship-progress-steps-outer {
+.#{$prefix}-steps-outer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,7 +37,7 @@
   align-items: center
 }
 
-.ship-progress-steps-item {
+.#{$prefix}-steps-item {
   -ms-flex-negative: 0;
   flex-shrink: 0;
   min-width: 2px;
@@ -47,50 +47,58 @@
   transition: all .3s
 }
 
-.ship-progress-steps-item-active {
+.#{$prefix}-steps-item-active {
   background: #1890ff
 }
-
-.ship-progress-small.ship-progress-line,.ship-progress-small.ship-progress-line .ship-progress-text .anticon {
-  font-size: 12px
+.#{$prefix}-small{
+  &.#{$prefix}-line{
+    font-size: 12px;
+    .#{$prefix}-text .anticon {
+      font-size: 12px
+    }
+  }
 }
 
-.ship-progress-outer {
+.#{$prefix}-outer {
   display: inline-block;
   width: 100%;
   margin-right: 0;
   padding-right: 0
 }
 
-.ship-progress-show-info .ship-progress-outer {
-  margin-right: calc(-2em - 8px);
-  padding-right: calc(2em + 8px)
+.#{$prefix}-show-info {
+  .#{$prefix}-outer {
+    margin-right: calc(-2em - 8px);
+    padding-right: calc(2em + 8px)
+  }
 }
 
-.ship-progress-inner {
+.#{$prefix}-inner {
   position: relative;
   display: inline-block;
   width: 100%;
   overflow: hidden;
   vertical-align: middle;
   background-color: #f5f5f5;
-  border-radius: 100px
+  border-radius: 100px;
+  &:not(.#{$prefix}-circle-gradient) {
+    .#{$prefix}-circle-path {
+      stroke: #1890ff
+    }
+  }
 }
 
-.ship-progress-circle-trail {
+.#{$prefix}-circle-trail {
   stroke: #f5f5f5
 }
 
-.ship-progress-circle-path {
+.#{$prefix}-circle-path {
   -webkit-animation: ship-progress-appear .3s;
   animation: ship-progress-appear .3s
 }
 
-.ship-progress-inner:not(.ship-progress-circle-gradient) .ship-progress-circle-path {
-  stroke: #1890ff
-}
-
-.ship-progress-bg,.ship-progress-success-bg {
+.#{$prefix}-bg,
+.#{$prefix}-success-bg {
   position: relative;
   background-color: #1890ff;
   border-radius: 100px;
@@ -98,14 +106,14 @@
   transition: all .4s cubic-bezier(.08,.82,.17,1) 0s
 }
 
-.ship-progress-success-bg {
+.#{$prefix}-success-bg {
   position: absolute;
   top: 0;
   left: 0;
   background-color: #52c41a
 }
 
-.ship-progress-text {
+.#{$prefix}-text {
   display: inline-block;
   width: 2em;
   margin-left: 8px;
@@ -118,80 +126,96 @@
   word-break: normal
 }
 
-.ship-progress-text .anticon {
+.#{$prefix}-text .anticon {
   font-size: 14px
 }
 
-.ship-progress-status-active .ship-progress-bg:before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: #fff;
-  border-radius: 10px;
-  opacity: 0;
-  -webkit-animation: ship-progress-active 2.4s cubic-bezier(.23,1,.32,1) infinite;
-  animation: ship-progress-active 2.4s cubic-bezier(.23,1,.32,1) infinite;
-  content: ""
+.#{$prefix}-status-active {
+  .#{$prefix}-bg{
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: #fff;
+      border-radius: 10px;
+      opacity: 0;
+      -webkit-animation: ship-progress-active 2.4s cubic-bezier(.23,1,.32,1) infinite;
+      animation: ship-progress-active 2.4s cubic-bezier(.23,1,.32,1) infinite;
+      content: ""
+    }
+  }
 }
 
-.ship-progress-status-exception .ship-progress-bg {
-  background-color: #ff4d4f
+.#{$prefix}-status-exception {
+  .#{$prefix}-bg {
+    background-color: #ff4d4f
+  }
+  .#{$prefix}-text {
+    color: #ff4d4f
+  }
+  .#{$prefix}-inner{
+    &:not(.#{$prefix}-circle-gradient) {
+      .#{$prefix}-circle-path {
+        stroke: #ff4d4f
+      }
+    }
+  }
 }
 
-.ship-progress-status-exception .ship-progress-text {
-  color: #ff4d4f
+.#{$prefix}-status-success {
+  .#{$prefix}-bg {
+    background-color: #52c41a
+  }
+  .#{$prefix}-text {
+    color: #52c41a
+  }
+  .#{$prefix}-inner{
+    &:not(.#{$prefix}-circle-gradient) {
+      .#{$prefix}-circle-path {
+        stroke: #52c41a
+      }
+    }
+  }
 }
 
-.ship-progress-status-exception .ship-progress-inner:not(.ship-progress-circle-gradient) .ship-progress-circle-path {
-  stroke: #ff4d4f
-}
-
-.ship-progress-status-success .ship-progress-bg {
-  background-color: #52c41a
-}
-
-.ship-progress-status-success .ship-progress-text {
-  color: #52c41a
-}
-
-.ship-progress-status-success .ship-progress-inner:not(.ship-progress-circle-gradient) .ship-progress-circle-path {
-  stroke: #52c41a
-}
-
-.ship-progress-circle .ship-progress-inner {
-  position: relative;
-  line-height: 1;
-  background-color: transparent
-}
-
-.ship-progress-circle .ship-progress-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  color: rgba(0,0,0,.85);
-  font-size: 1em;
-  line-height: 1;
-  white-space: normal;
-  text-align: center;
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%)
-}
-
-.ship-progress-circle .ship-progress-text .anticon {
-  font-size: 1.16666667em
-}
-
-.ship-progress-circle.ship-progress-status-exception .ship-progress-text {
-  color: #ff4d4f
-}
-
-.ship-progress-circle.ship-progress-status-success .ship-progress-text {
-  color: #52c41a
+.#{$prefix}-circle {
+  .#{$prefix}-inner {
+    position: relative;
+    line-height: 1;
+    background-color: transparent
+  }
+  .#{$prefix}-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: rgba(0,0,0,.85);
+    font-size: 1em;
+    line-height: 1;
+    white-space: normal;
+    text-align: center;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%)
+  }
+  .#{$prefix}-text {
+    .anticon {
+      font-size: 1.16666667em
+    }
+  }
+  &.#{$prefix}-status-exception{
+    .#{$prefix}-text {
+      color: #ff4d4f
+    }
+  }
+  &.#{$prefix}-status-success {
+    .#{$prefix}-text {
+      color: #52c41a
+    }
+  }
 }
 
 @-webkit-keyframes ship-progress-active {
@@ -228,28 +252,32 @@
   }
 }
 
-.ship-progress-rtl {
-  direction: rtl
+.#{$prefix}-rtl {
+  direction: rtl;
+  &.#{$prefix}-show-info {
+    .#{$prefix}-outer {
+      margin-right: 0;
+      margin-left: calc(-2em - 8px);
+      padding-right: 0;
+      padding-left: calc(2em + 8px)
+    }
+  }
+  .#{$prefix}-success-bg {
+    right: 0;
+    left: auto
+  }
+  .#{$prefix}-line {
+    .#{$prefix}-text,
+    .#{$prefix}-text {
+      margin-right: 8px;
+      margin-left: 0;
+      text-align: right
+    }
+  }
 }
 
-.ship-progress-rtl.ship-progress-show-info .ship-progress-outer {
-  margin-right: 0;
-  margin-left: calc(-2em - 8px);
-  padding-right: 0;
-  padding-left: calc(2em + 8px)
-}
-
-.ship-progress-rtl .ship-progress-success-bg {
-  right: 0;
-  left: auto
-}
-
-.ship-progress-rtl.ship-progress-line .ship-progress-text,.ship-progress-rtl.ship-progress-steps .ship-progress-text {
-  margin-right: 8px;
-  margin-left: 0;
-  text-align: right
-}
-div.ship-progress-circle, div.ship-progress-line {
+div.#{$prefix}-circle, 
+div.#{$prefix}-line {
   margin-right: 8px;
   margin-bottom: 8px;
 }

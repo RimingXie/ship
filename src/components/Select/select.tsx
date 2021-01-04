@@ -1,8 +1,11 @@
 import React from 'react';
 import classNames from 'classnames';
+import RcSelect, { Option as RcOption, SelectProps as RcSelectProps } from 'rc-select';
+import Icon from '../Icon';
+const prefixCls = 'ship-select'
 
-export interface SelectProps extends React.HTMLAttributes<HTMLElement>{
-
+export interface SelectProps extends RcSelectProps {
+  
 }
 
 /**
@@ -13,12 +16,21 @@ export interface SelectProps extends React.HTMLAttributes<HTMLElement>{
  * ```
  */
 export const Select: React.FC<SelectProps> = (props) => {
-  const {className, ...others} = props
+  const { className, ...others } = props
   const classes = classNames('select', className, {
 
   })
   return (
-    <div className={classes} {...others}></div>
+    <RcSelect
+    inputIcon={<Icon icon="chevron-down" />}
+      defaultActiveFirstOption
+      prefixCls={prefixCls}
+      {...others}
+    >
+      <RcOption value="jack">jack</RcOption>
+      <RcOption value="lucy">lucy</RcOption>
+      <RcOption value="yiminghe">yiminghe</RcOption>
+    </RcSelect>
   )
 }
 

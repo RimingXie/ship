@@ -1,4 +1,5 @@
-.btn {
+$prefix: 'ship-btn';
+.#{$prefix} {
   position: relative;
   display: inline-block;
   font-weight: $btn-font-weight;
@@ -22,44 +23,40 @@
       pointer-events: none;
     }
   }
-}
-
-.btn-lg {
-  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
-}
-.btn-sm {
-  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
-}
-
-.btn-primary {
-  @include button-style($primary, $primary, $white)
-}
-.btn-danger {
-  @include button-style($danger, $danger, $white)
-}
-
-.btn-default {
-  @include button-style($white, $gray-400, $body-color, $white, $primary, $primary)
-}
-
-.btn-link {
-  font-weight: $font-weight-normal;
-  color: $btn-link-color;
-  text-decoration: $link-decoration;
-  box-shadow: none;
-  &:hover {
-    color: $btn-link-hover-color;
-    text-decoration: $link-hover-decoration; 
+  &-lg {
+    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
   }
-  &:focus,
-  &.focus {
-    text-decoration: $link-hover-decoration;
+  &-sm {
+    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+  }
+  &-primary {
+    @include button-style($primary, $primary, $white)
+  }
+  &-danger {
+    @include button-style($danger, $danger, $white)
+  }
+  &-default {
+    @include button-style($white, $gray-400, $body-color, $white, $primary, $primary)
+  }
+  &-link {
+    font-weight: $font-weight-normal;
+    color: $btn-link-color;
+    text-decoration: $link-decoration;
     box-shadow: none;
-  }
-  &:disabled,
-  &.disabled {
-    color: $btn-link-disabled-color;
-    pointer-events: none;
+    &:hover {
+      color: $btn-link-hover-color;
+      text-decoration: $link-hover-decoration; 
+    }
+    &:focus,
+    &.focus {
+      text-decoration: $link-hover-decoration;
+      box-shadow: none;
+      outline: none;
+    }
+    &:disabled,
+    &.disabled {
+      color: $btn-link-disabled-color;
+      pointer-events: none;
+    }
   }
 }
-

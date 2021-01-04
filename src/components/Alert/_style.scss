@@ -1,38 +1,90 @@
-.alert{
+$prefix: 'ship-alert';
+.#{$prefix} {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  border: $btn-border-width solid transparent;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
   position: relative;
-  @include button-size( $btn-padding-y,  $btn-padding-x,  $font-size-sm,  $border-radius);
-}
-
-.alert-success{
-  @include button-style($success, lighten($success, 10%), $white, $success, lighten($success, 10%), $white)
-}
-
-.alert-info{
-  @include button-style($info, lighten($info, 10%), $white, $info, lighten($info, 10%), $white)
-}
-
-.alert-warning{
-  @include button-style($warning, lighten($warning, 10%), $white, $warning, lighten($warning, 10%), $white)
-}
-
-.alert-error{
-  @include button-style($danger, lighten($danger, 10%), $white, $danger, lighten($danger, 10%), $white)
-}
-
-.alert-with-description{
-  padding: 15px 15px;
-  .alert-message{
-    font-size: $font-size-base;
-    display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  @include button-size(
+    $btn-padding-y,
+    $btn-padding-x,
+    $font-size-sm,
+    $border-radius
+  );
+  padding: 12px 15px;
+  &-icon {
+    margin-right: 8px;
   }
-  .alert-description{
-    display: block;
+  &-success {
+    @include button-style(
+      $success,
+      lighten($success, 10%),
+      $white,
+      $success,
+      lighten($success, 10%),
+      $white
+    );
   }
-}
-
-.alert-close-icon{
+  &-info {
+    @include button-style(
+      $info,
+      lighten($info, 10%),
+      $white,
+      $info,
+      lighten($info, 10%),
+      $white
+    );
+  }
+  &-warning {
+    @include button-style(
+      $warning,
+      lighten($warning, 10%),
+      $white,
+      $warning,
+      lighten($warning, 10%),
+      $white
+    );
+  }
+  &-error {
+    @include button-style(
+      $danger,
+      lighten($danger, 10%),
+      $white,
+      $danger,
+      lighten($danger, 10%),
+      $white
+    );
+  }
+  &-with-description {
+    padding: 15px 15px;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    .#{$prefix}-message {
+      font-size: $font-size-base;
+      display: block;
+    }
+    .#{$prefix}-description {
+      display: block;
+    }
+    .#{$prefix}-icon {
+      margin-right: 15px;
+      font-size: 24px;
+    }
+  }
+  &-close-icon {
     position: absolute;
     top: $sub-sup-font-size;
     right: $font-size-base;
@@ -44,8 +96,10 @@
     border: none;
     outline: none;
     cursor: pointer;
-}
-
-.alert-close-text{
-  color: $gray-700;
+    line-height: 21px;
+  }
+  &-close-text {
+    color: $gray-700;
+  }
+  
 }

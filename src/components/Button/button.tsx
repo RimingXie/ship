@@ -1,6 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
+const prefix = 'ship-btn'
+
 export type ButtonSize = 'lg' | 'df' | 'sm'
 
 // export enum ButtonSize {
@@ -43,9 +45,9 @@ export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
  * ```
  */
 export const Button: React.FC<ButtonProps> = ({ btnType, disabled, size, children, href, className, ...restProps }) => {
-  const classes = classNames('btn', className, {
-    [`btn-${btnType}`]: btnType,
-    [`btn-${size}`]: size && size !== 'df',
+  const classes = classNames(prefix, className, {
+    [`${prefix}-${btnType}`]: btnType,
+    [`${prefix}-${size}`]: size && size !== 'df',
     'disabled': (btnType === 'link') && disabled
   })
   if (btnType === 'link' && href) {

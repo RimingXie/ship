@@ -1,5 +1,5 @@
-
-.ship-tag {
+$prefix: 'ship-tag';
+.#{$prefix} {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: rgba(0,0,0,.85);
@@ -21,87 +21,97 @@
   border-radius: 2px;
   opacity: 1;
   -webkit-transition: all .3s;
-  transition: all .3s
+  transition: all .3s;
+  &:hover {
+    opacity: .85
+  }
 }
 
-.ship-tag:hover {
-  opacity: .85
-}
 
-.ship-tag,.ship-tag a,.ship-tag a:hover {
+.#{$prefix},
+.#{$prefix} a,
+.#{$prefix} a:hover {
   color: rgba(0,0,0,.85)
 }
 
-.ship-tag>a:first-child:last-child {
+.#{$prefix}>a:first-child:last-child {
   display: inline-block;
   margin: 0 -8px;
   padding: 0 8px
 }
 
-.ship-tag-close-icon {
+.#{$prefix}-close-icon {
   margin-left: 3px;
   color: rgba(0,0,0,.45);
   font-size: 10px;
   cursor: pointer;
   -webkit-transition: all .3s;
-  transition: all .3s
+  transition: all .3s;
+  &:hover {
+    color: rgba(0,0,0,.85)
+  }
 }
 
-.ship-tag-close-icon:hover {
-  color: rgba(0,0,0,.85)
-}
-
-.ship-tag-has-color {
+.#{$prefix}-has-color {
   border-color: transparent
 }
 
-.ship-tag-has-color,.ship-tag-has-color .anticon-close,.ship-tag-has-color .anticon-close:hover,.ship-tag-has-color a,.ship-tag-has-color a:hover {
+.#{$prefix}-has-color,
+.#{$prefix}-has-color .anticon-close,
+.#{$prefix}-has-color .anticon-close:hover,
+.#{$prefix}-has-color a,
+.#{$prefix}-has-color a:hover {
   color: #fff
 }
 
-.ship-tag-checkable {
+.#{$prefix}-checkable {
   background-color: transparent;
   border-color: transparent;
   cursor: pointer
 }
 
-.ship-tag-checkable:not(.ship-tag-checkable-checked):hover {
-  color: #1890ff
+.#{$prefix}-checkable{
+  &:not(.#{$prefix}-checkable-checked){
+    &:hover {
+      color: #1890ff
+    }
+  }
 }
 
-.ship-tag-checkable-checked,.ship-tag-checkable:active {
+.#{$prefix}-checkable-checked,
+.#{$prefix}-checkable:active {
   color: #fff
 }
 
-.ship-tag-checkable-checked {
+.#{$prefix}-checkable-checked {
   background-color: #1890ff
 }
 
-.ship-tag-checkable:active {
+.#{$prefix}-checkable:active {
   background-color: #096dd9
 }
 
-.ship-tag-hidden {
+.#{$prefix}-hidden {
   display: none
 }
 
-.ship-tag>.anticon+span,.ship-tag>span+.anticon {
+.#{$prefix}>.anticon+span,.#{$prefix}>span+.anticon {
   margin-left: 7px
 }
 
-.ship-tag.ship-tag-rtl {
+.#{$prefix}.#{$prefix}-rtl {
   margin-right: 0;
   margin-left: 8px;
   direction: rtl;
   text-align: right
 }
 
-.ship-tag-rtl .ship-tag-close-icon {
+.#{$prefix}-rtl .#{$prefix}-close-icon {
   margin-right: 3px;
   margin-left: 0
 }
 
-.ship-tag-rtl.ship-tag>.anticon+span,.ship-tag-rtl.ship-tag>span+.anticon {
+.#{$prefix}-rtl.#{$prefix}>.anticon+span,.#{$prefix}-rtl.#{$prefix}>span+.anticon {
   margin-right: 7px;
   margin-left: 0
 }
