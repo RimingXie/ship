@@ -1,11 +1,12 @@
 import React from 'react';
 import classNames from 'classnames';
-import RcSelect, { Option as RcOption, SelectProps as RcSelectProps } from 'rc-select';
+import RcSelect, { SelectProps as RcSelectProps } from 'rc-select';
 import Icon from '../Icon';
 const prefixCls = 'ship-select'
 
+export type SelectSizes = 'large' | 'default' | 'small'
 export interface SelectProps extends RcSelectProps {
-  
+  size?: SelectSizes
 }
 
 /**
@@ -16,20 +17,20 @@ export interface SelectProps extends RcSelectProps {
  * ```
  */
 export const Select: React.FC<SelectProps> = (props) => {
-  const { className, ...others } = props
-  const classes = classNames('select', className, {
-
+  const { className, children, size, ...others } = props
+  const classes = classNames(className, {
+    [`${prefixCls}-sm`]: size === "small",
+    [`${prefixCls}-lg`]: size === "large",
   })
   return (
     <RcSelect
-    inputIcon={<Icon icon="chevron-down" />}
+      className={classes}
+      inputIcon={<Icon icon="chevron-down" />}
       defaultActiveFirstOption
       prefixCls={prefixCls}
       {...others}
     >
-      <RcOption value="jack">jack</RcOption>
-      <RcOption value="lucy">lucy</RcOption>
-      <RcOption value="yiminghe">yiminghe</RcOption>
+      {children}
     </RcSelect>
   )
 }

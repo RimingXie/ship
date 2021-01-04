@@ -831,3 +831,9 @@ $prefix-dropdown: $prefix + '-dropdown';
     padding-left: 12px
   }
 }
+
+.ship-select-selector{
+  .ship-select-selection-overflow-item{
+    display: inline-block;
+  }
+}
