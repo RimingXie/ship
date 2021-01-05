@@ -6,7 +6,7 @@ $prefix-vertical: $prefix + '-vertical';
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5715;
@@ -41,7 +41,7 @@ $prefix-vertical: $prefix + '-vertical';
     display: -ms-flexbox;
     display: flex;
     margin: 16px 0;
-    color: rgba(0,0,0,.85);
+    color: $black85;
     font-weight: 500;
     font-size: 16px;
     white-space: nowrap;
@@ -104,7 +104,7 @@ $prefix-vertical: $prefix + '-vertical';
 }
 
 .#{$prefix}-plain.#{$prefix}-with-text {
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-weight: 400;
   font-size: 14px
 }

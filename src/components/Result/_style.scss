@@ -2,16 +2,16 @@ $prefix: 'ship-result';
 .#{$prefix} {
   padding: 48px 32px;
   &-success .#{$prefix}-icon>.anticon {
-    color: #52c41a;
+    color: $success;
   }
   &-error .#{$prefix}-icon>.anticon {
-    color: #ff4d4f
+    color: $danger;
   }
   &-info .#{$prefix}-icon>.anticon {
-    color: #1890ff
+    color: $primary;
   }
   &-warning .#{$prefix}-icon>.anticon {
-    color: #faad14
+    color: $warning;
   }
   &-image {
     width: 250px;
@@ -26,13 +26,13 @@ $prefix: 'ship-result';
     }
   }
   &-title {
-    color: rgba(0,0,0,.85);
+    color: $black85;
     font-size: 24px;
     line-height: 1.8;
     text-align: center
   }
   &-subtitle {
-    color: rgba(0,0,0,.45);
+    color: $black45;
     font-size: 14px;
     line-height: 1.6;
     text-align: center
@@ -50,7 +50,7 @@ $prefix: 'ship-result';
   &-content {
     margin-top: 24px;
     padding: 24px 40px;
-    background-color: #fafafa
+    background-color: $gray-100;
   }
 }
 

@@ -4,7 +4,7 @@ $prefix: 'ship-progress';
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5715;
@@ -48,7 +48,7 @@ $prefix: 'ship-progress';
 }
 
 .#{$prefix}-steps-item-active {
-  background: #1890ff
+  background: $primary;
 }
 .#{$prefix}-small{
   &.#{$prefix}-line{
@@ -79,17 +79,17 @@ $prefix: 'ship-progress';
   width: 100%;
   overflow: hidden;
   vertical-align: middle;
-  background-color: #f5f5f5;
+  background-color: $gray-200;
   border-radius: 100px;
   &:not(.#{$prefix}-circle-gradient) {
     .#{$prefix}-circle-path {
-      stroke: #1890ff
+      stroke: $primary;
     }
   }
 }
 
 .#{$prefix}-circle-trail {
-  stroke: #f5f5f5
+  stroke: $gray-200
 }
 
 .#{$prefix}-circle-path {
@@ -100,7 +100,7 @@ $prefix: 'ship-progress';
 .#{$prefix}-bg,
 .#{$prefix}-success-bg {
   position: relative;
-  background-color: #1890ff;
+  background-color: $primary;
   border-radius: 100px;
   -webkit-transition: all .4s cubic-bezier(.08,.82,.17,1) 0s;
   transition: all .4s cubic-bezier(.08,.82,.17,1) 0s
@@ -110,14 +110,14 @@ $prefix: 'ship-progress';
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #52c41a
+  background-color: $success;
 }
 
 .#{$prefix}-text {
   display: inline-block;
   width: 2em;
   margin-left: 8px;
-  color: rgba(0,0,0,.45);
+  color: $black45;
   font-size: 1em;
   line-height: 1;
   white-space: nowrap;
@@ -138,7 +138,7 @@ $prefix: 'ship-progress';
       right: 0;
       bottom: 0;
       left: 0;
-      background: #fff;
+      background: $white;
       border-radius: 10px;
       opacity: 0;
       -webkit-animation: ship-progress-active 2.4s cubic-bezier(.23,1,.32,1) infinite;
@@ -150,15 +150,15 @@ $prefix: 'ship-progress';
 
 .#{$prefix}-status-exception {
   .#{$prefix}-bg {
-    background-color: #ff4d4f
+    background-color: $danger
   }
   .#{$prefix}-text {
-    color: #ff4d4f
+    color: $danger
   }
   .#{$prefix}-inner{
     &:not(.#{$prefix}-circle-gradient) {
       .#{$prefix}-circle-path {
-        stroke: #ff4d4f
+        stroke: $danger
       }
     }
   }
@@ -166,15 +166,15 @@ $prefix: 'ship-progress';
 
 .#{$prefix}-status-success {
   .#{$prefix}-bg {
-    background-color: #52c41a
+    background-color: $success
   }
   .#{$prefix}-text {
-    color: #52c41a
+    color: $success
   }
   .#{$prefix}-inner{
     &:not(.#{$prefix}-circle-gradient) {
       .#{$prefix}-circle-path {
-        stroke: #52c41a
+        stroke: $success
       }
     }
   }
@@ -193,7 +193,7 @@ $prefix: 'ship-progress';
     width: 100%;
     margin: 0;
     padding: 0;
-    color: rgba(0,0,0,.85);
+    color: $black85;
     font-size: 1em;
     line-height: 1;
     white-space: normal;
@@ -208,12 +208,12 @@ $prefix: 'ship-progress';
   }
   &.#{$prefix}-status-exception{
     .#{$prefix}-text {
-      color: #ff4d4f
+      color: $danger
     }
   }
   &.#{$prefix}-status-success {
     .#{$prefix}-text {
-      color: #52c41a
+      color: $success
     }
   }
 }

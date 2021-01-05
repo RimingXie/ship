@@ -2,7 +2,7 @@ $prefix: 'ship-modal';
 .#{$prefix} {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5715;
@@ -38,7 +38,7 @@ $prefix: 'ship-modal';
   left: 0;
   z-index: 1000;
   height: 100%;
-  background-color: rgba(0,0,0,.45)
+  background-color: $black45;
 }
 
 .#{$prefix}-mask-hidden {
@@ -59,7 +59,7 @@ $prefix: 'ship-modal';
 
 .#{$prefix}-title {
   margin: 0;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
@@ -68,7 +68,7 @@ $prefix: 'ship-modal';
 
 .#{$prefix}-content {
   position: relative;
-  background-color: #fff;
+  background-color: $white;
   background-clip: padding-box;
   border: 0;
   border-radius: 2px;
@@ -83,7 +83,7 @@ $prefix: 'ship-modal';
   right: 0;
   z-index: 10;
   padding: 0;
-  color: rgba(0,0,0,.45);
+  color: $black45;
   font-weight: 700;
   line-height: 1;
   text-decoration: none;
@@ -110,16 +110,16 @@ $prefix: 'ship-modal';
 .#{$prefix}-close{
   &:focus,
   &:hover{
-    color: rgba(0,0,0,.75);
+    color: $black75;
     text-decoration: none
   }
 }
 
 .#{$prefix}-header {
   padding: 16px 24px;
-  color: rgba(0,0,0,.85);
-  background: #fff;
-  border-bottom: 1px solid #f0f0f0;
+  color: $black85;
+  background: $white;
+  border-bottom: 1px solid $gray-300;
   border-radius: 2px 2px 0 0
 }
 
@@ -134,7 +134,7 @@ $prefix: 'ship-modal';
   padding: 10px 16px;
   text-align: right;
   background: 0 0;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid $gray-300;
   border-radius: 0 0 2px 2px
 }
 
@@ -217,14 +217,14 @@ $prefix: 'ship-modal';
   .#{$prefix}-confirm-title {
     display: block;
     overflow: hidden;
-    color: rgba(0,0,0,.85);
+    color: $black85;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.4
   }
   .#{$prefix}-confirm-content {
     margin-top: 8px;
-    color: rgba(0,0,0,.85);
+    color: $black85;
     font-size: 14px
   }
 }

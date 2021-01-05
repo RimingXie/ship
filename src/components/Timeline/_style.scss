@@ -2,7 +2,7 @@ $prefix: 'ship-timeline';
 .#{$prefix} {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5715;
@@ -22,7 +22,7 @@ $prefix: 'ship-timeline';
       top: 10px;
       left: 4px;
       height: calc(100% - 10px);
-      border-left: 2px solid #f0f0f0
+      border-left: 2px solid $gray-300;
     }
     &-pending {
       .#{$prefix}-item-head {
@@ -37,24 +37,24 @@ $prefix: 'ship-timeline';
       position: absolute;
       width: 10px;
       height: 10px;
-      background-color: #fff;
+      background-color: $white;
       border: 2px solid transparent;
       border-radius: 100px;
       &-blue {
-        color: #1890ff;
-        border-color: #1890ff
+        color: $primary;
+        border-color: $primary
       }
       &-red {
-        color: #ff4d4f;
-        border-color: #ff4d4f
+        color: $danger;
+        border-color: $danger
       }
       &-green {
-        color: #52c41a;
-        border-color: #52c41a
+        color: $success;
+        border-color: $success
       }
       &-gray {
-        color: rgba(0,0,0,.25);
-        border-color: rgba(0,0,0,.25)
+        color: $black25;
+        border-color: $black25;
       }
       &-custom {
         position: absolute;
@@ -136,7 +136,7 @@ $prefix: 'ship-timeline';
       .#{$prefix}-item-tail {
         display: block;
         height: calc(100% - 14px);
-        border-left: 2px dotted #f0f0f0
+        border-left: 2px dotted $gray-300;
       }
     }
   }
@@ -151,7 +151,7 @@ $prefix: 'ship-timeline';
         top: 15px;
         display: block;
         height: calc(100% - 15px);
-        border-left: 2px dotted #f0f0f0
+        border-left: 2px dotted $gray-300;
       }
       .#{$prefix}-item-content {
         min-height: 48px
@@ -180,7 +180,7 @@ $prefix: 'ship-timeline';
   .#{$prefix}-item-tail {
     right: 4px;
     left: auto;
-    border-right: 2px solid #f0f0f0;
+    border-right: 2px solid $gray-300;
     border-left: none
   }
   .#{$prefix}-item-head-custom {
@@ -241,7 +241,7 @@ $prefix: 'ship-timeline';
     &.#{$prefix}-pending .#{$prefix}-item-last,
     &.#{$prefix}-reverse .#{$prefix}-item-pending{
       .#{$prefix}-item-tail {
-        border-right: 2px dotted #f0f0f0;
+        border-right: 2px dotted $gray-300;
         border-left: none
       }
     }

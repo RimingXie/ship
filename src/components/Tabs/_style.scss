@@ -110,7 +110,7 @@ $prefix: 'ship-tabs';
       position: absolute;
       right: 0;
       left: 0;
-      border-bottom: 1px solid #f0f0f0;
+      border-bottom: 1px solid $gray-300;
       content: "";
     }
     .#{$prefix}-ink-bar {
@@ -196,7 +196,7 @@ $prefix: 'ship-tabs';
     .#{$prefix}-tab-active{
       .#{$prefix}-tab-btn {
         font-weight: 400;
-        text-shadow: 0 0 .25px #096dd9;
+        text-shadow: 0 0 .25px darken($primary, 15%);
       }
     }
     .#{$prefix}-nav-wrap {
@@ -257,7 +257,7 @@ $prefix: 'ship-tabs';
   >.#{$prefix}-content-holder,
   >div>.#{$prefix}-content-holder {
     margin-left: -1px;
-    border-left: 1px solid #f0f0f0;
+    border-left: 1px solid $gray-300;
     >.#{$prefix}-content{
       >.#{$prefix}-tabpane {
         padding-left: 24px
@@ -282,7 +282,7 @@ $prefix: 'ship-tabs';
     -ms-flex-order: 0;
     order: 0;
     margin-right: -1px;
-    border-right: 1px solid #f0f0f0;
+    border-right: 1px solid $gray-300;
     >.#{$prefix}-content{
       >.#{$prefix}-tabpane {
         padding-right: 24px
@@ -296,7 +296,7 @@ $prefix: 'ship-tabs';
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5715;
@@ -322,7 +322,7 @@ $prefix: 'ship-tabs';
   overflow-y: auto;
   text-align: left;
   list-style-type: none;
-  background-color: #fff;
+  background-color: $white;
   background-clip: padding-box;
   border-radius: 2px;
   outline: none;
@@ -335,7 +335,7 @@ $prefix: 'ship-tabs';
   margin: 0;
   padding: 5px 12px;
   overflow: hidden;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;
@@ -348,11 +348,11 @@ $prefix: 'ship-tabs';
 
 .#{$prefix}-dropdown-menu-item{
   &:hover {
-    background: #f5f5f5
+    background: $gray-200;
   }
   &-disabled,
   &-disabled:hover {
-    color: rgba(0,0,0,.25);
+    color: $black25;
     background: 0 0;
     cursor: not-allowed;
   }
@@ -364,14 +364,14 @@ $prefix: 'ship-tabs';
     .#{$prefix}-tab {
       margin: 0;
       padding: 8px 16px;
-      background: #fafafa;
-      border: 1px solid #f0f0f0;
+      background: $gray-100;
+      border: 1px solid $gray-300;
       -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
       transition: all .3s cubic-bezier(.645,.045,.355,1);
     }
     .#{$prefix}-tab-active {
-      color: #1890ff;
-      background: #fff
+      color: $primary;
+      background: $white;
     }
     .#{$prefix}-ink-bar {
       visibility: hidden
@@ -395,7 +395,7 @@ $prefix: 'ship-tabs';
         border-radius: 2px 2px 0 0
       }
       .#{$prefix}-tab-active {
-        border-bottom-color: #fff
+        border-bottom-color: $white;
       }
       .#{$prefix}-tab {
         border-radius: 0 0 2px 2px
@@ -406,7 +406,7 @@ $prefix: 'ship-tabs';
     >.#{$prefix}-nav,
     >div>.#{$prefix}-nav{
       .#{$prefix}-tab-active {
-        border-top-color: #fff
+        border-top-color: $white;
       }
     }
   }
@@ -428,7 +428,7 @@ $prefix: 'ship-tabs';
         border-radius: 2px 0 0 2px
       }
       .#{$prefix}-tab-active {
-        border-right-color: #fff
+        border-right-color: $white;
       }
     }
   }
@@ -439,7 +439,7 @@ $prefix: 'ship-tabs';
         border-radius: 0 2px 2px 0
       }
       .#{$prefix}-tab-active {
-        border-left-color: #fff
+        border-left-color: $white;
       }
     }
   }
@@ -450,7 +450,7 @@ $prefix: 'ship-tabs';
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5715;
@@ -540,19 +540,19 @@ $prefix: 'ship-tabs';
     .#{$prefix}-nav-add {
       min-width: 40px;
       padding: 0 8px;
-      background: #fafafa;
-      border: 1px solid #f0f0f0;
+      background: $gray-100;
+      border: 1px solid $gray-200;
       border-radius: 2px 2px 0 0;
       outline: none;
       cursor: pointer;
       -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
       transition: all .3s cubic-bezier(.645,.045,.355,1);
       &:hover {
-        color: #40a9ff;
+        color: darken($primary, 15%);
       }
       &:active,
       &:focus {
-        color: #096dd9
+        color: darken($primary, 25%);
       }
     }
   }
@@ -576,7 +576,7 @@ $prefix: 'ship-tabs';
 
 .#{$prefix}-ink-bar {
   position: absolute;
-  background: #1890ff;
+  background: $primary;
   pointer-events: none
 }
 
@@ -608,7 +608,7 @@ $prefix: 'ship-tabs';
 .#{$prefix}-tab-remove{
   &:active,
   &:focus {
-    color: #096dd9
+    color: darken($primary, 15%);
   }
 }
 
@@ -625,7 +625,7 @@ $prefix: 'ship-tabs';
   flex: none;
   margin-right: -4px;
   margin-left: 8px;
-  color: rgba(0,0,0,.45);
+  color: $black45;
   font-size: 12px;
   background: 0 0;
   border: none;
@@ -634,28 +634,28 @@ $prefix: 'ship-tabs';
 
 .#{$prefix}-tab-remove{
   &:hover {
-    color: rgba(0,0,0,.85)
+    color: $black85;
   }
 }
 
 .#{$prefix}-tab{
   &:hover {
-    color: #40a9ff
+    color: darken($primary, 15%);
   }
   &.#{$prefix}-tab-active {
     .#{$prefix}-tab-btn {
-      color: #1890ff;
+      color: $primary;
       font-weight: 500
     }
   }
   &.#{$prefix}-tab-disabled {
-    color: rgba(0,0,0,.25);
+    color: $black25;
     cursor: not-allowed;
     .#{$prefix}-tab-btn,
     .#{$prefix}-tab-remove{
       &:active,
       &:focus {
-        color: rgba(0,0,0,.25)
+        color: $black25;
       }
     }
   }

@@ -45,6 +45,7 @@ $theme-colors:
 $font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
+$font-family-apple:           -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 
 // 字体大小
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
@@ -286,3 +287,11 @@ $progress-bg:                       $gray-200 !default;
 $progress-border-radius:            $border-radius !default;
 $progress-bar-color:                $white !default;
 $progress-bar-transition:           width .6s ease !default;
+
+$black25: rgba(0,0,0,.25);
+$black35: rgba(0,0,0,.35);
+$black45: rgba(0,0,0,.45);
+$black55: rgba(0,0,0,.55);
+$black65: rgba(0,0,0,.65);
+$black75: rgba(0,0,0,.75);
+$black85: rgba(0,0,0,.85);

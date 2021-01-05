@@ -2,7 +2,7 @@ $prefix: 'ship-switch';
 .#{$prefix} {
   margin: 0;
   padding: 0;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5715;
@@ -17,7 +17,7 @@ $prefix: 'ship-switch';
   height: 22px;
   line-height: 22px;
   vertical-align: middle;
-  background-color: rgba(0,0,0,.25);
+  background-color: $black25;
   border: 0;
   border-radius: 100px;
   cursor: pointer;
@@ -113,7 +113,7 @@ $prefix: 'ship-switch';
   &-loading-icon {
     position: relative;
     top: 2px;
-    color: rgba(0,0,0,.65);
+    color: $black65;
     vertical-align: top
   }
   &-small {

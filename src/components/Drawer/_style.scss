@@ -19,7 +19,7 @@ $prefix: 'ship-drawer';
     height: 100%
   }
   .ship-picker-clear {
-    background: #fff
+    background: $white;
   }
 }
 
@@ -138,7 +138,7 @@ $prefix: 'ship-drawer';
 
 .#{$prefix}-title {
   margin: 0;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-weight: 500;
   font-size: 16px;
   line-height: 22px
@@ -148,7 +148,7 @@ $prefix: 'ship-drawer';
   position: relative;
   z-index: 1;
   overflow: auto;
-  background-color: #fff;
+  background-color: $white;
   background-clip: padding-box;
   border: 0
 }
@@ -160,7 +160,7 @@ $prefix: 'ship-drawer';
   z-index: 10;
   display: block;
   padding: 20px;
-  color: rgba(0,0,0,.45);
+  color: $black45;
   font-weight: 700;
   font-size: 16px;
   font-style: normal;
@@ -178,7 +178,7 @@ $prefix: 'ship-drawer';
   &:focus,
   .#{$prefix}-close{
     &:hover {
-      color: rgba(0,0,0,.75);
+      color: $black75;
       text-decoration: none
     }
   }
@@ -194,14 +194,14 @@ $prefix: 'ship-drawer';
 .#{$prefix}-header {
   position: relative;
   padding: 16px 24px;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid $gray-300;
   border-radius: 2px 2px 0 0
 }
 
 .#{$prefix}-header,
 .#{$prefix}-header-no-title {
-  color: rgba(0,0,0,.85);
-  background: #fff
+  color: $black85;
+  background: $white;
 }
 
 .#{$prefix}-wrapper-body {
@@ -233,7 +233,7 @@ $prefix: 'ship-drawer';
   -ms-flex-negative: 0;
   flex-shrink: 0;
   padding: 10px;
-  border-top: 1px solid #f0f0f0
+  border-top: 1px solid $gray-300;
 }
 
 .#{$prefix}-mask {
@@ -242,7 +242,7 @@ $prefix: 'ship-drawer';
   left: 0;
   width: 100%;
   height: 0;
-  background-color: rgba(0,0,0,.45);
+  background-color: $black45;
   opacity: 0;
   filter: alpha(opacity=45);
   -webkit-transition: opacity .3s linear,height 0s ease .3s;

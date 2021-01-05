@@ -177,12 +177,12 @@ $prefix-dropdown: $prefix + '-dropdown';
 .#{$prefix}-disabled {
   &.#{$prefix}-multiple {
     .#{$prefix-selector} {
-      background: #f5f5f5;
+      background: $gray-200;
       cursor: not-allowed
     }
     .#{$prefix-selection}-item {
-      color: #bfbfbf;
-      border-color: #d9d9d9;
+      color: $gray-500;
+      border-color: $gray-400;
       cursor: not-allowed
     }
   }
@@ -192,8 +192,8 @@ $prefix-dropdown: $prefix + '-dropdown';
   &.#{$prefix}{
     &:not(.ship-select-customize-input){
       .#{$prefix-selector} {
-        color: rgba(0,0,0,.25);
-        background: #f5f5f5;
+        color: $black25;
+        background: $gray-200;
         cursor: not-allowed;
         input {
           cursor: not-allowed
@@ -252,8 +252,8 @@ $prefix-dropdown: $prefix + '-dropdown';
     margin-bottom: 2px;
     padding: 0 4px 0 8px;
     line-height: 22px;
-    background: #f5f5f5;
-    border: 1px solid #f0f0f0;
+    background: $gray-200;
+    border: 1px solid $gray-300;
     border-radius: 2px;
     cursor: default;
     -webkit-transition: font-size .3s,line-height .3s,height .3s;
@@ -281,7 +281,7 @@ $prefix-dropdown: $prefix + '-dropdown';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     display: inline-block;
-    color: rgba(0,0,0,.45);
+    color: $black45;
     font-weight: 700;
     font-size: 10px;
     line-height: inherit;
@@ -302,7 +302,7 @@ $prefix-dropdown: $prefix + '-dropdown';
       vertical-align: -.2em
     }
     &:hover {
-      color: rgba(0,0,0,.75)
+      color: $black75;
     }
   }
   .#{$prefix-selection}-search {
@@ -311,7 +311,7 @@ $prefix-dropdown: $prefix + '-dropdown';
   }
   .#{$prefix-selection}-search-input,
   .#{$prefix-selection}-search-mirror {
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-family: $font-family-apple;
     line-height: 1.5715;
     -webkit-transition: all .3s;
     transition: all .3s
@@ -398,7 +398,7 @@ $prefix-dropdown: $prefix + '-dropdown';
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5715;
@@ -411,8 +411,8 @@ $prefix-dropdown: $prefix + '-dropdown';
   &:not(.ship-select-customize-input){
     .#{$prefix-selector} {
       position: relative;
-      background-color: #fff;
-      border: 1px solid #d9d9d9;
+      background-color: $white;
+      border: 1px solid $gray-400;
       border-radius: 2px;
       -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
       transition: all .3s cubic-bezier(.645,.045,.355,1);
@@ -437,7 +437,7 @@ $prefix-dropdown: $prefix + '-dropdown';
   }
   &:not(.ship-select-disabled){
     &:hover .#{$prefix-selector} {
-      border-color: #40a9ff;
+      border-color: darken($primary, 15%);
       border-right-width: 1px!important
     }
   }
@@ -451,7 +451,7 @@ $prefix-dropdown: $prefix + '-dropdown';
     &.#{$prefix}{
       &:not(.ship-select-customize-input){
         .#{$prefix-selector} {
-          border-color: #40a9ff;
+          border-color: darken($primary, 15%);
           border-right-width: 1px!important;
           outline: 0;
           -webkit-box-shadow: 0 0 0 2px rgba(24,144,255,.2);
@@ -484,7 +484,7 @@ $prefix-dropdown: $prefix + '-dropdown';
   -ms-flex: 1;
   flex: 1;
   overflow: hidden;
-  color: #bfbfbf;
+  color: $gray-500;
   white-space: nowrap;
   text-overflow: ellipsis
 }
@@ -512,7 +512,7 @@ $prefix-dropdown: $prefix + '-dropdown';
   width: 12px;
   height: 12px;
   margin-top: -6px;
-  color: rgba(0,0,0,.25);
+  color: $black25;
   font-size: 12px;
   line-height: 1;
   text-align: center;
@@ -553,13 +553,13 @@ $prefix-dropdown: $prefix + '-dropdown';
   width: 12px;
   height: 12px;
   margin-top: -6px;
-  color: rgba(0,0,0,.25);
+  color: $black25;
   font-size: 12px;
   font-style: normal;
   line-height: 1;
   text-align: center;
   text-transform: none;
-  background: #fff;
+  background: $white;
   cursor: pointer;
   opacity: 0;
   -webkit-transition: color .3s ease,opacity .15s ease;
@@ -569,13 +569,13 @@ $prefix-dropdown: $prefix + '-dropdown';
     display: block
   }
   &:hover {
-    color: rgba(0,0,0,.45)
+    color: $black45;
   }
 }
 
 .#{$prefix-dropdown} {
   margin: 0;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-variant: tabular-nums;
   line-height: 1.5715;
   list-style: none;
@@ -591,7 +591,7 @@ $prefix-dropdown: $prefix + '-dropdown';
   overflow: hidden;
   font-size: 14px;
   font-variant: normal;
-  background-color: #fff;
+  background-color: $white;
   border-radius: 2px;
   outline: none;
   -webkit-box-shadow: 0 3px 6px -4px rgba(0,0,0,.12),0 6px 16px 0 rgba(0,0,0,.08),0 9px 28px 8px rgba(0,0,0,.05);
@@ -639,12 +639,11 @@ $prefix-dropdown: $prefix + '-dropdown';
 }
 
 .#{$prefix-dropdown}-empty {
-  color: rgba(0,0,0,.25)
+  color: $black25;
 }
 
 .#{$prefix-item}-empty {
-  color: rgba(0,0,0,.85);
-  color: rgba(0,0,0,.25)
+  color: $black25;
 }
 
 .#{$prefix-item},
@@ -659,14 +658,14 @@ $prefix-dropdown: $prefix + '-dropdown';
 }
 
 .#{$prefix-item} {
-  color: rgba(0,0,0,.85);
+  color: $black85;
   cursor: pointer;
   -webkit-transition: background .3s ease;
   transition: background .3s ease
 }
 
 .#{$prefix-item}-group {
-  color: rgba(0,0,0,.45);
+  color: $black45;
   font-size: 12px;
   cursor: default
 }
@@ -693,23 +692,23 @@ $prefix-dropdown: $prefix + '-dropdown';
 }
 
 .#{$prefix-item}-option-active:not(.#{$prefix-item}-option-disabled) {
-  background-color: #f5f5f5
+  background-color: $gray-200
 }
 
 .#{$prefix-item}-option-selected {
   &:not(.#{$prefix-item}-option-disabled) {
-    color: rgba(0,0,0,.85);
+    color: $black85;
     font-weight: 600;
     background-color: #e6f7ff;
     .#{$prefix-item}-option-state {
-      color: #1890ff
+      color: $primary;
     }
   }
 }
 
 
 .#{$prefix-item}-option-disabled {
-  color: rgba(0,0,0,.25);
+  color: $black25;
   cursor: not-allowed
 }
 

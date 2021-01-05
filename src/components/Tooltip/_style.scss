@@ -4,7 +4,7 @@ $prefix: 'ship-tooltip';
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5715;
@@ -23,11 +23,11 @@ $prefix: 'ship-tooltip';
     min-width: 30px;
     min-height: 32px;
     padding: 6px 8px;
-    color: #fff;
+    color: $white;
     text-align: left;
     text-decoration: none;
     word-wrap: break-word;
-    background-color: rgba(0,0,0,.75);
+    background-color: $black75;
     border-radius: 2px;
     -webkit-box-shadow: 0 3px 6px -4px rgba(0,0,0,.12),0 6px 16px 0 rgba(0,0,0,.08),0 9px 28px 8px rgba(0,0,0,.05);
     box-shadow: 0 3px 6px -4px rgba(0,0,0,.12),0 6px 16px 0 rgba(0,0,0,.08),0 9px 28px 8px rgba(0,0,0,.05)
@@ -182,7 +182,7 @@ $prefix: 'ship-tooltip';
   width: 5px;
   height: 5px;
   margin: auto;
-  background-color: rgba(0,0,0,.75);
+  background-color: $black75;
   content: "";
   pointer-events: auto
 }

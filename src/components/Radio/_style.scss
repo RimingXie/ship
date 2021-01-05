@@ -4,7 +4,7 @@ $prefix: 'ship-radio';
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5715;
@@ -33,7 +33,7 @@ $prefix: 'ship-radio';
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5715;
@@ -57,7 +57,7 @@ $prefix: 'ship-radio';
 .#{$prefix}-input:focus+.#{$prefix}-inner,
 .#{$prefix}-wrapper:hover .#{$prefix},
 .#{$prefix}:hover .#{$prefix}-inner {
-  border-color: #1890ff
+  border-color: $primary;
 }
 
 .#{$prefix}-input:focus+.#{$prefix}-inner {
@@ -71,7 +71,7 @@ $prefix: 'ship-radio';
   left: 0;
   width: 100%;
   height: 100%;
-  border: 1px solid #1890ff;
+  border: 1px solid $primary;
   border-radius: 50%;
   visibility: hidden;
   -webkit-animation: antRadioEffect .36s ease-in-out;
@@ -93,8 +93,8 @@ $prefix: 'ship-radio';
   display: block;
   width: 16px;
   height: 16px;
-  background-color: #fff;
-  border: 1px solid #d9d9d9;
+  background-color: $white;
+  border: 1px solid $gray-400;
   border-radius: 50%;
   -webkit-transition: all .3s;
   transition: all .3s
@@ -107,7 +107,7 @@ $prefix: 'ship-radio';
   display: table;
   width: 8px;
   height: 8px;
-  background-color: #1890ff;
+  background-color: $primary;
   border-top: 0;
   border-left: 0;
   border-radius: 8px;
@@ -132,7 +132,7 @@ $prefix: 'ship-radio';
 
 .#{$prefix}-checked {
   .#{$prefix}-inner {
-    border-color: #1890ff
+    border-color: $primary;
   }
   .#{$prefix}-inner:after {
     -webkit-transform: scale(1);
@@ -146,18 +146,18 @@ $prefix: 'ship-radio';
 .#{$prefix}-disabled {
   cursor: not-allowed;
   .#{$prefix}-inner {
-    background-color: #f5f5f5;
-    border-color: #d9d9d9!important;
+    background-color: $gray-200;
+    border-color: $gray-400 !important;
     cursor: not-allowed
   }
   .#{$prefix}-inner:after {
-    background-color: rgba(0,0,0,.2)
+    background-color: $black25;
   }
   .#{$prefix}-input {
     cursor: not-allowed
   }
   &+span {
-    color: rgba(0,0,0,.25);
+    color: $black25;
     cursor: not-allowed
   }
 }
@@ -173,11 +173,11 @@ span.#{$prefix}+* {
   height: 32px;
   margin: 0;
   padding: 0 15px;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-size: 14px;
   line-height: 30px;
-  background: #fff;
-  border-color: #d9d9d9;
+  background: $white;
+  border-color: $gray-400;
   border-style: solid;
   border-width: 1.02px 1px 1px 0;
   cursor: pointer;
@@ -186,7 +186,7 @@ span.#{$prefix}+* {
   transition: color .3s,background .3s,border-color .3s,box-shadow .3s;
   transition: color .3s,background .3s,border-color .3s,box-shadow .3s,-webkit-box-shadow .3s;
   a {
-    color: rgba(0,0,0,.85)
+    color: $black85;
   }
   >.#{$prefix}-button {
     position: absolute;
@@ -225,13 +225,13 @@ span.#{$prefix}+* {
     width: 1px;
     height: 100%;
     padding: 1px 0;
-    background-color: #d9d9d9;
+    background-color: $gray-400;
     -webkit-transition: background-color .3s;
     transition: background-color .3s;
     content: ""
   }
   &:first-child {
-    border-left: 1px solid #d9d9d9;
+    border-left: 1px solid $gray-400;
     border-radius: 2px 0 0 2px;
     &:last-child {
       border-radius: 2px
@@ -242,7 +242,7 @@ span.#{$prefix}+* {
   }
   &:hover {
     position: relative;
-    color: #1890ff
+    color: $primary;
   }
   &:focus-within {
     -webkit-box-shadow: 0 0 0 3px rgba(24,144,255,.08);
@@ -259,31 +259,31 @@ span.#{$prefix}+* {
   &-checked{
     &:not(.#{$prefix}-button-wrapper-disabled) {
       z-index: 1;
-      color: #1890ff;
-      background: #fff;
-      border-color: #1890ff
+      color: $primary;
+      background: $white;
+      border-color: $primary;
     }
   }
   &-checked{
     &:not(.#{$prefix}-button-wrapper-disabled){
       &::before {
-        background-color: #1890ff
+        background-color: $primary;
       }
       &:first-child {
-        border-color: #1890ff
+        border-color: $primary;
       }
       &:hover {
-        color: #40a9ff;
-        border-color: #40a9ff;
+        color: darken($primary, 15%);
+        border-color: darken($primary, 15%);
         &::before {
-          background-color: #40a9ff
+          background-color: darken($primary, 15%);
         }
       }
       &:active {
-        color: #096dd9;
-        border-color: #096dd9;
+        color: darken($primary, 25%);
+        border-color: darken($primary, 25%);
         &::before {
-          background-color: #096dd9
+          background-color: darken($primary, 25%);
         }
       }
       &:focus-within {
@@ -298,18 +298,18 @@ span.#{$prefix}+* {
 .#{$prefix}-group-solid {
   .#{$prefix}-button-wrapper-checked{
     &:not(.#{$prefix}-button-wrapper-disabled) {
-      color: #fff;
-      background: #1890ff;
-      border-color: #1890ff;
+      color: $white;
+      background: $primary;
+      border-color: $primary;
       &:hover {
-        color: #fff;
-        background: #40a9ff;
-        border-color: #40a9ff
+        color: $white;
+        background: darken($primary, 15%);
+        border-color: darken($primary, 15%);
       }
       &:active {
-        color: #fff;
-        background: #096dd9;
-        border-color: #096dd9
+        color: $white;
+        background: darken($primary, 25%);
+        border-color: darken($primary, 25%);
       }
       &:focus-within {
         -webkit-box-shadow: 0 0 0 3px rgba(24,144,255,.08);
@@ -321,22 +321,22 @@ span.#{$prefix}+* {
 
 .#{$prefix}-button-wrapper-disabled {
   cursor: not-allowed;
-  color: rgba(0,0,0,.25);
-  background-color: #f5f5f5;
-  border-color: #d9d9d9;
+  color: $black25;
+  background-color: $gray-200;
+  border-color: $gray-400;
   :first-child,
   &:hover {
-    color: rgba(0,0,0,.25);
-    background-color: #f5f5f5;
-    border-color: #d9d9d9
+    color: $black25;
+    background-color:   $gray-200;
+    border-color: $gray-400;
   }
   &:first-child {
-    border-left-color: #d9d9d9
+    border-left-color: $gray-400;
   }
   &.#{$prefix}-button-wrapper-checked {
-    color: rgba(0,0,0,.25);
-    background-color: #e6e6e6;
-    border-color: #d9d9d9;
+    color: $black25;
+    background-color: $gray-300;
+    border-color: $gray-400;
     -webkit-box-shadow: none;
     box-shadow: none
   }
@@ -401,7 +401,7 @@ span.#{$prefix}+* {
         }
       }
       &:first-child {
-        border-right: 1px solid #d9d9d9;
+        border-right: 1px solid $gray-400;
         border-radius: 0 2px 2px 0
       }
       &:last-child {
@@ -409,7 +409,7 @@ span.#{$prefix}+* {
       }
       &-disabled{
         &:first-child {
-          border-right-color: #d9d9d9
+          border-right-color: $gray-400;
         }
       }
     }
@@ -418,7 +418,7 @@ span.#{$prefix}+* {
     &:not([class*=" ship-radio-button-wrapper-disabled"]){
       &.#{$prefix}-button-wrapper{
         &:first-child {
-          border-right-color: #40a9ff
+          border-right-color: darken($primary, 15%);
         }
       }
     }

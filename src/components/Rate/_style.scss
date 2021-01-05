@@ -2,7 +2,7 @@ $prefix: 'ship-rate';
 .#{$prefix} {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5715;
@@ -11,7 +11,7 @@ $prefix: 'ship-rate';
   display: inline-block;
   margin: 0;
   padding: 0;
-  color: #fadb14;
+  color: $warning;
   font-size: 20px;
   line-height: unset;
   list-style: none;
@@ -48,7 +48,7 @@ $prefix: 'ship-rate';
   }
   &-star-first,
   &-star-second {
-    color: #f0f0f0;
+    color: $gray-300;
     -webkit-transition: all .3s;
     transition: all .3s;
     -webkit-user-select: none;

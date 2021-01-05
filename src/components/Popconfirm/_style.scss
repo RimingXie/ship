@@ -4,7 +4,7 @@ $prefix: 'ship-popover';
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5715;
@@ -59,7 +59,7 @@ $prefix: 'ship-popover';
 }
 
 .#{$prefix}-inner {
-  background-color: #fff;
+  background-color: $white;
   background-clip: padding-box;
   border-radius: 2px;
   -webkit-box-shadow: 0 3px 6px -4px rgba(0,0,0,.12),0 6px 16px 0 rgba(0,0,0,.08),0 9px 28px 8px rgba(0,0,0,.05);
@@ -80,27 +80,27 @@ $prefix: 'ship-popover';
   min-height: 32px;
   margin: 0;
   padding: 5px 16px 4px;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-weight: 500;
-  border-bottom: 1px solid #f0f0f0
+  border-bottom: 1px solid $gray-300;
 }
 
 .#{$prefix}-inner-content {
   padding: 12px 16px;
-  color: rgba(0,0,0,.85)
+  color: $black85;
 }
 
 .#{$prefix}-message {
   position: relative;
   padding: 4px 0 12px;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-size: 14px
 }
 
 .#{$prefix}-message>.anticon {
   position: absolute;
   top: 8.0005px;
-  color: #faad14;
+  color: $warning;
   font-size: 14px;
   line-height: 14px;
 }
@@ -134,7 +134,7 @@ $prefix: 'ship-popover';
 .#{$prefix}-placement-topLeft>.#{$prefix}-content>.#{$prefix}-arrow,
 .#{$prefix}-placement-topRight>.#{$prefix}-content>.#{$prefix}-arrow {
   bottom: 6.2px;
-  border-color: transparent #fff #fff transparent;
+  border-color: transparent $white $white transparent;
   -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,.07);
   box-shadow: 3px 3px 7px rgba(0,0,0,.07)
 }
@@ -157,7 +157,7 @@ $prefix: 'ship-popover';
 .#{$prefix}-placement-rightBottom>.#{$prefix}-content>.#{$prefix}-arrow,
 .#{$prefix}-placement-rightTop>.#{$prefix}-content>.#{$prefix}-arrow {
   left: 6px;
-  border-color: transparent transparent #fff #fff;
+  border-color: transparent transparent $white $white;
   -webkit-box-shadow: -3px 3px 7px rgba(0,0,0,.07);
   box-shadow: -3px 3px 7px rgba(0,0,0,.07)
 }
@@ -180,7 +180,7 @@ $prefix: 'ship-popover';
 .#{$prefix}-placement-bottomLeft>.#{$prefix}-content>.#{$prefix}-arrow,
 .#{$prefix}-placement-bottomRight>.#{$prefix}-content>.#{$prefix}-arrow {
   top: 6px;
-  border-color: #fff transparent transparent #fff;
+  border-color: $white transparent transparent $white;
   -webkit-box-shadow: -2px -2px 5px rgba(0,0,0,.06);
   box-shadow: -2px -2px 5px rgba(0,0,0,.06)
 }
@@ -203,7 +203,7 @@ $prefix: 'ship-popover';
 .#{$prefix}-placement-leftBottom>.#{$prefix}-content>.#{$prefix}-arrow,
 .#{$prefix}-placement-leftTop>.#{$prefix}-content>.#{$prefix}-arrow {
   right: 6px;
-  border-color: #fff #fff transparent transparent;
+  border-color: $white $white transparent transparent;
   -webkit-box-shadow: 3px -3px 7px rgba(0,0,0,.07);
   box-shadow: 3px -3px 7px rgba(0,0,0,.07)
 }

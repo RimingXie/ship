@@ -2,7 +2,7 @@ $prefix: 'ship-tag';
 .#{$prefix} {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  color: rgba(0,0,0,.85);
+  color: $black85;
   font-size: 14px;
   font-variant: tabular-nums;
   line-height: 1.5715;
@@ -16,8 +16,8 @@ $prefix: 'ship-tag';
   font-size: 12px;
   line-height: 20px;
   white-space: nowrap;
-  background: #fafafa;
-  border: 1px solid #d9d9d9;
+  background: $light;
+  border: 1px solid $gray-400;
   border-radius: 2px;
   opacity: 1;
   -webkit-transition: all .3s;
@@ -31,7 +31,7 @@ $prefix: 'ship-tag';
 .#{$prefix},
 .#{$prefix} a,
 .#{$prefix} a:hover {
-  color: rgba(0,0,0,.85)
+  color: $black85;
 }
 
 .#{$prefix}>a:first-child:last-child {
@@ -42,13 +42,13 @@ $prefix: 'ship-tag';
 
 .#{$prefix}-close-icon {
   margin-left: 3px;
-  color: rgba(0,0,0,.45);
+  color: $black45;
   font-size: 10px;
   cursor: pointer;
   -webkit-transition: all .3s;
   transition: all .3s;
   &:hover {
-    color: rgba(0,0,0,.85)
+    color: $black85;
   }
 }
 
@@ -61,7 +61,7 @@ $prefix: 'ship-tag';
 .#{$prefix}-has-color .anticon-close:hover,
 .#{$prefix}-has-color a,
 .#{$prefix}-has-color a:hover {
-  color: #fff
+  color: $white;
 }
 
 .#{$prefix}-checkable {
@@ -73,22 +73,22 @@ $prefix: 'ship-tag';
 .#{$prefix}-checkable{
   &:not(.#{$prefix}-checkable-checked){
     &:hover {
-      color: #1890ff
+      color: $primary;
     }
   }
 }
 
 .#{$prefix}-checkable-checked,
 .#{$prefix}-checkable:active {
-  color: #fff
+  color: $white;
 }
 
 .#{$prefix}-checkable-checked {
-  background-color: #1890ff
+  background-color: $primary;
 }
 
 .#{$prefix}-checkable:active {
-  background-color: #096dd9
+  background-color: darken($primary, 15%);
 }
 
 .#{$prefix}-hidden {
