@@ -1,5 +1,5 @@
-$prefix: '.ship-switch';
-.ship-switch {
+$prefix: 'ship-switch';
+.#{$prefix} {
   margin: 0;
   padding: 0;
   color: rgba(0,0,0,.85);
@@ -37,19 +37,19 @@ $prefix: '.ship-switch';
     }
   }
   &-checked{
-    background-color: #1890ff;
+    background-color: $primary;
     &:focus {
       -webkit-box-shadow: 0 0 0 2px rgba(24,144,255,.2);
       box-shadow: 0 0 0 2px rgba(24,144,255,.2)
     }
-    .ship-switch-inner {
+    .#{$prefix}-inner {
       margin: 0 25px 0 7px
     }
-    .ship-switch-handle {
+    .#{$prefix}-handle {
       left: calc(100% - 20px)
     }
-    .ship-switch-loading-icon {
-      color: #1890ff
+    .#{$prefix}-loading-icon {
+      color: $primary
     }
   }
   &-disabled,
@@ -66,7 +66,7 @@ $prefix: '.ship-switch';
   &-inner {
     display: block;
     margin: 0 7px 0 25px;
-    color: #fff;
+    color: $white;
     font-size: 12px;
     -webkit-transition: margin .2s;
     transition: margin .2s
@@ -81,7 +81,7 @@ $prefix: '.ship-switch';
       right: 0;
       bottom: 0;
       left: 0;
-      background-color: #fff;
+      background-color: $white;
       border-radius: 9px;
       -webkit-box-shadow: 0 2px 4px 0 rgba(0,35,11,.2);
       box-shadow: 0 2px 4px 0 rgba(0,35,11,.2);
@@ -94,14 +94,14 @@ $prefix: '.ship-switch';
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out
   }
-  &:not(.ship-switch-disabled){
+  &:not(.#{$prefix}-disabled){
     &:active{
-      .ship-switch-handle:before {
+      .#{$prefix}-handle:before {
         right: -30%;
         left: 0
       }
-      .ship-switch-checked{
-        .ship-switch-handle{
+      .#{$prefix}-checked{
+        .#{$prefix}-handle{
           &:before {
             right: 0;
             left: -30%
@@ -120,46 +120,46 @@ $prefix: '.ship-switch';
     min-width: 28px;
     height: 16px;
     line-height: 16px;
-    .ship-switch-inner {
+    .#{$prefix}-inner {
       margin: 0 5px 0 18px;
       font-size: 12px
     }
-    .ship-switch-handle {
+    .#{$prefix}-handle {
       width: 12px;
       height: 12px
     }
-    .ship-switch-loading-icon {
+    .#{$prefix}-loading-icon {
       top: 1.5px;
       font-size: 9px
     }
-    &.ship-switch-checked{
-      .ship-switch-inner {
+    &.#{$prefix}-checked{
+      .#{$prefix}-inner {
         margin: 0 18px 0 5px
       }
-      .ship-switch-handle {
+      .#{$prefix}-handle {
         left: calc(100% - 14px)
       }
     }
   }
 }
 
-.ship-switch-rtl {
+.#{$prefix}-rtl {
   direction: rtl;
-  .ship-switch-inner {
+  .#{$prefix}-inner {
     margin: 0 25px 0 7px
   }
-  .ship-switch-handle {
+  .#{$prefix}-handle {
     right: 2px;
     left: auto
   }
-  &:not(.ship-switch-rtl-disabled){
+  &:not(.#{$prefix}-rtl-disabled){
     &:active {
-      .ship-switch-handle:before {
+      .#{$prefix}-handle:before {
         right: 0;
         left: -30%
       }
-      &.ship-switch-checked{
-        .ship-switch-handle{
+      &.#{$prefix}-checked{
+        .#{$prefix}-handle{
           &:before {
             right: -30%;
             left: 0
@@ -168,22 +168,22 @@ $prefix: '.ship-switch';
       }
     }
   }
-  &.ship-switch-checked{
-    .ship-switch-inner {
+  &.#{$prefix}-checked{
+    .#{$prefix}-inner {
       margin: 0 7px 0 25px
     }
     ship-switch-handle {
       right: calc(100% - 20px)
     }
   }
-  &.ship-switch-small{
-    &.ship-switch-checked{
-      .ship-switch-handle {
+  &.#{$prefix}-small{
+    &.#{$prefix}-checked{
+      .#{$prefix}-handle {
         right: calc(100% - 14px)
       }
     }
   }
 }
-.svg-inline--fa.fa-w-16.ship-switch-loading-icon{
+.svg-inline--fa.fa-w-16.#{$prefix}-loading-icon{
  top: 0;
 }

@@ -1,0 +1,99 @@
+$prefix: 'ship-rate';
+.#{$prefix} {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: rgba(0,0,0,.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  color: #fadb14;
+  font-size: 20px;
+  line-height: unset;
+  list-style: none;
+  outline: none;
+  &-disabled {
+    .#{$prefix}-star {
+      cursor: default;
+      &:hover {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+      }
+    }
+  }
+  &-star {
+    position: relative;
+    display: inline-block;
+    color: inherit;
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    &:not(:last-child) {
+      margin-right: 8px
+    }
+    >div{
+      &:focus {
+        outline: 0
+      }
+      &:focus,
+      &:hover {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1)
+      }
+    }
+  }
+  &-star-first,
+  &-star-second {
+    color: #f0f0f0;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    .anticon {
+      vertical-align: middle
+    }
+  }
+  &-star-first {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0
+  }
+  &-star-half{
+    .#{$prefix}-star-first,
+    .#{$prefix}-star-second {
+      opacity: 1
+    }
+  }
+  &-star-full .#{$prefix}-star-second,
+  &-star-half .#{$prefix}-star-first {
+    color: inherit
+  }
+  &-text {
+    display: inline-block;
+    margin: 0 8px;
+    font-size: 14px
+  }
+  &-rtl {
+    direction: rtl;
+    .#{$prefix}-star{
+      :not(:last-child) {
+        margin-right: 0;
+        margin-left: 8px
+      }
+    }
+    .#{$prefix}-star-first {
+      right: 0;
+      left: auto
+    }
+  }
+}

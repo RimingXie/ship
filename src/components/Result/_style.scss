@@ -1,0 +1,68 @@
+$prefix: 'ship-result';
+.#{$prefix} {
+  padding: 48px 32px;
+  &-success .#{$prefix}-icon>.anticon {
+    color: #52c41a;
+  }
+  &-error .#{$prefix}-icon>.anticon {
+    color: #ff4d4f
+  }
+  &-info .#{$prefix}-icon>.anticon {
+    color: #1890ff
+  }
+  &-warning .#{$prefix}-icon>.anticon {
+    color: #faad14
+  }
+  &-image {
+    width: 250px;
+    height: 295px;
+    margin: auto
+  }
+  &-icon {
+    margin-bottom: 24px;
+    text-align: center;
+    >.anticon {
+      font-size: 72px
+    }
+  }
+  &-title {
+    color: rgba(0,0,0,.85);
+    font-size: 24px;
+    line-height: 1.8;
+    text-align: center
+  }
+  &-subtitle {
+    color: rgba(0,0,0,.45);
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center
+  }
+  &-extra {
+    margin: 24px 0 0;
+    text-align: center;
+    >* {
+      margin-right: 8px
+    }
+    >:last-child {
+      margin-right: 0
+    }
+  }
+  &-content {
+    margin-top: 24px;
+    padding: 24px 40px;
+    background-color: #fafafa
+  }
+}
+
+.#{$prefix}-rtl {
+  direction: rtl;
+  .#{$prefix}-extra{
+    >* {
+      margin-right: 0;
+      margin-left: 8px
+    }
+    >:last-child {
+      margin-left: 0
+    }
+  }
+}
